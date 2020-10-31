@@ -3,6 +3,7 @@ package cn.ztuo.bitrade.interceptor;
 import cn.ztuo.bitrade.constant.SysConstant;
 import cn.ztuo.bitrade.entity.Admin;
 import cn.ztuo.bitrade.service.AdminService;
+import com.alibaba.fastjson.JSON;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
@@ -37,6 +38,7 @@ public class SessionInterceptor implements HandlerInterceptor {
         AdminService adminService = (AdminService) factory.getBean("adminService");
         logger.info(request.getContextPath());
         Subject currentUser = SecurityUtils.getSubject();
+        
 
         //判断用户是通过记住我功能自动登录,此时session失效
         if(!currentUser.isAuthenticated() && currentUser.isRemembered()){

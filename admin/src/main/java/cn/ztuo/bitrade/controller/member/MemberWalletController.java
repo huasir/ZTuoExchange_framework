@@ -53,7 +53,7 @@ public class MemberWalletController extends BaseAdminController {
     private OtcWalletService otcWalletService;
 
 
-    @RequiresPermissions("member:member-wallet:balance")
+    //@RequiresPermissions("member:member-wallet:balance")
     @PostMapping("balance")
     @AccessLog(module = AdminModule.MEMBER, operation = "余额管理")
     public MessageResult getBalance(
@@ -104,7 +104,7 @@ public class MemberWalletController extends BaseAdminController {
      * @param screen
      * @return
      */
-    @RequiresPermissions("member:otc-wallet:closeBalance")
+    //@RequiresPermissions("member:otc-wallet:closeBalance")
     @PostMapping("otc/balance")
     @AccessLog(module = AdminModule.MEMBER, operation = "法币余额管理")
     public MessageResult getOtcBalance(
@@ -146,7 +146,7 @@ public class MemberWalletController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"), page);
     }
 
-    @RequiresPermissions("member:member-wallet:recharge")
+    //@RequiresPermissions("member:member-wallet:recharge")
     @PostMapping("recharge")
     @AccessLog(module = AdminModule.MEMBER, operation = "充币管理")
     public MessageResult recharge(
@@ -172,7 +172,7 @@ public class MemberWalletController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("member:member-wallet:reset-address")
+    //@RequiresPermissions("member:member-wallet:reset-address")
     @PostMapping("reset-address")
     @AccessLog(module = AdminModule.MEMBER, operation = "重置钱包地址")
     public MessageResult resetAddress(String unit, long uid) {
@@ -189,7 +189,7 @@ public class MemberWalletController extends BaseAdminController {
         }
     }
 
-    @RequiresPermissions("member:member-wallet:lock-wallet")
+    //@RequiresPermissions("member:member-wallet:lock-wallet")
     @PostMapping("lock-wallet")
     @AccessLog(module = AdminModule.MEMBER, operation = "锁定钱包")
     public MessageResult lockWallet(Long uid, String unit) {
@@ -200,7 +200,7 @@ public class MemberWalletController extends BaseAdminController {
         }
     }
 
-    @RequiresPermissions("member:member-wallet:unlock-wallet")
+    //@RequiresPermissions("member:member-wallet:unlock-wallet")
     @PostMapping("unlock-wallet")
     @AccessLog(module = AdminModule.MEMBER, operation = "解锁钱包")
     public MessageResult unlockWallet(Long uid, String unit) {
@@ -211,7 +211,7 @@ public class MemberWalletController extends BaseAdminController {
         }
     }
 
-    @RequiresPermissions("member:member-wallet:lock-wallet")
+    //@RequiresPermissions("member:member-wallet:lock-wallet")
     @PostMapping("lock-position")
     @AccessLog(module = AdminModule.MEMBER, operation = "锁仓")
     public MessageResult lockPosition(Long uid, String unit, BigDecimal amount, String reason, Date unlockTime) {
@@ -236,7 +236,7 @@ public class MemberWalletController extends BaseAdminController {
         return lockPositionRecordService.lockPosition(memberWallet,amount,member,reason,unlockTime);
     }
 
-    @RequiresPermissions("member:member-wallet:unlock-wallet")
+    //@RequiresPermissions("member:member-wallet:unlock-wallet")
     @PostMapping("unlock-position")
     @AccessLog(module = AdminModule.MEMBER, operation = "解锁锁仓金额")
     public MessageResult unlockPosition(@RequestParam("lockPositionId") Long lockPositionId) {
@@ -253,7 +253,7 @@ public class MemberWalletController extends BaseAdminController {
      * @param memberId
      * @return
      */
-    @RequiresPermissions("member:otc-wallet:query")
+    //@RequiresPermissions("member:otc-wallet:query")
     @RequestMapping(value = "otc/query/{memberId}",method = RequestMethod.GET)
     @AccessLog(module = AdminModule.MEMBER, operation = "查询法币账户")
     public MessageResult queryOtcWallet(@PathVariable("memberId")Long memberId) {
@@ -268,7 +268,7 @@ public class MemberWalletController extends BaseAdminController {
      * @param unit
      * @return
      */
-    @RequiresPermissions("member:otc-wallet:lock-wallet")
+    //@RequiresPermissions("member:otc-wallet:lock-wallet")
     @RequestMapping(value = "otc/lock-wallet",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MEMBER, operation = "锁定法币钱包")
     public MessageResult lockOtcWallet(Long uid, String unit) {
@@ -285,7 +285,7 @@ public class MemberWalletController extends BaseAdminController {
      * @param unit
      * @return
      */
-    @RequiresPermissions("member:otc-wallet:unlock-wallet")
+    //@RequiresPermissions("member:otc-wallet:unlock-wallet")
     @RequestMapping(value = "otc/unlock-wallet",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MEMBER, operation = "解锁法币钱包")
     public MessageResult unlockOtcWallet(Long uid, String unit) {

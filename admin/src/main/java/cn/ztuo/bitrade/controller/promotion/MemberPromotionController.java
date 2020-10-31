@@ -55,7 +55,7 @@ public class MemberPromotionController {
     private LocaleMessageSourceService messageSource;
 
     @PostMapping("page-query")
-    @RequiresPermissions("promotion:member:page-query")
+    //@RequiresPermissions("promotion:member:page-query")
     @AccessLog(module = AdminModule.PROMOTION,operation = "推荐会员分页查询")
     public MessageResult page(PageModel pageModel, MemberPromotionScreen screen){
         Map<String,Object> map = getMemberPromotions(pageModel,screen,false);
@@ -64,7 +64,7 @@ public class MemberPromotionController {
     }
 
 
-    @RequiresPermissions("promotion:member:details")
+    //@RequiresPermissions("promotion:member:details")
     @PostMapping("details")
     @AccessLog(module = AdminModule.PROMOTION,operation = "推荐会员明细")
     public MessageResult promotionDetails(PageModel pageModel,
@@ -74,7 +74,7 @@ public class MemberPromotionController {
         return MessageResult.getSuccessInstance(messageSource.getMessage("SUCCESS"),page);
     }
 
-    //@RequiresPermissions("promotion:member:out-excel")
+    ////@RequiresPermissions("promotion:member:out-excel")
     @GetMapping("out-excel")
     public void outExcel(PageModel pageModel, MemberPromotionScreen screen,
                          HttpServletResponse response) throws Exception {

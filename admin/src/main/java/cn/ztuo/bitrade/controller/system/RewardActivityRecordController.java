@@ -27,7 +27,7 @@ public class RewardActivityRecordController extends BaseAdminController {
     @Autowired
     private RewardActivitySettingService rewardActivitySettingService;
 
-    @RequiresPermissions("system:reward-activity-record:merge")
+    //@RequiresPermissions("system:reward-activity-record:merge")
     @PostMapping("merge")
     @AccessLog(module = AdminModule.SYSTEM, operation = "创建修改邀请奖励设置")
     public MessageResult merge(@Valid RewardActivitySetting setting) {
@@ -47,7 +47,7 @@ public class RewardActivityRecordController extends BaseAdminController {
      * @param type
      * @return
      */
-    @RequiresPermissions("system:reward-activity-record:page-query")
+    //@RequiresPermissions("system:reward-activity-record:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.SYSTEM, operation = "分页查询邀请奖励设置")
     public MessageResult pageQuery(PageModel pageModel,
@@ -60,7 +60,7 @@ public class RewardActivityRecordController extends BaseAdminController {
         return success(all);
     }
 
-    @RequiresPermissions("system:reward-activity-record:deletes")
+    //@RequiresPermissions("system:reward-activity-record:deletes")
     @PostMapping("deletes")
     @AccessLog(module = AdminModule.SYSTEM, operation = "批量删除邀请奖励设置")
     public MessageResult deletes(Long[] ids) {

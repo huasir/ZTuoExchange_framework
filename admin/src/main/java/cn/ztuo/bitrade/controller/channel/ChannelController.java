@@ -39,7 +39,7 @@ public class ChannelController {
     @Autowired
     private LocaleMessageSourceService msService;
 
-    @RequiresPermissions("channel:list")
+    //@RequiresPermissions("channel:list")
     @PostMapping("list")
     @AccessLog(module = AdminModule.SYSTEM, operation = "查询当前渠道列表")
     public MessageResult listChannel(PageModel pageModel){
@@ -71,7 +71,7 @@ public class ChannelController {
         return result;
     }
 
-    @RequiresPermissions("channel:set")
+    //@RequiresPermissions("channel:set")
     @PostMapping("setUp")
     @AccessLog(module = AdminModule.SYSTEM, operation = "设置渠道")
     public MessageResult setChannel(@Param("mobilePhone")String mobilePhone){
@@ -90,7 +90,7 @@ public class ChannelController {
         return MessageResult.success();
     }
 
-    @RequiresPermissions("channel:revoke")
+    //@RequiresPermissions("channel:revoke")
     @PostMapping("revoke")
     @AccessLog(module = AdminModule.SYSTEM, operation = "撤销渠道")
     public MessageResult updateChannel(@Param("memberId")Long memberId){
@@ -109,7 +109,7 @@ public class ChannelController {
         return MessageResult.success();
     }
 
-    @RequiresPermissions("channel:list")
+    //@RequiresPermissions("channel:list")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.SYSTEM, operation = "查询当前渠道列表")
     public MessageResult channelRewardDetail(@Param("memberId")Long memberId,PageModel pageModel){

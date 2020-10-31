@@ -35,7 +35,7 @@ public class GoogleVerificationController {
      * @param admin
      * @return
      */
-    @RequiresPermissions("google:auth:googleState")
+    //@RequiresPermissions("google:auth:googleState")
     @GetMapping("googleState")
     public MessageResult adminDetail(@SessionAttribute(SysConstant.SESSION_ADMIN)Admin admin){
         MessageResult result=MessageResult.success();
@@ -83,7 +83,7 @@ public class GoogleVerificationController {
      * 生成谷歌认证码
      * @return
      */
-    @RequiresPermissions("google:auth:sendgoogle")
+    //@RequiresPermissions("google:auth:sendgoogle")
     @RequestMapping(value = "/sendgoogle",method = RequestMethod.GET)
     public MessageResult  sendgoogle(@SessionAttribute(SysConstant.SESSION_ADMIN)Admin admin) {
         /*for(int i = 0;i<50;i++){
@@ -124,7 +124,7 @@ public class GoogleVerificationController {
      * @return true
      */
 
-    @RequiresPermissions("google:auth:reset")
+    //@RequiresPermissions("google:auth:reset")
     @RequestMapping(value = "/jcgoogle" ,method = RequestMethod.POST)
     public MessageResult jcgoogle(String codes,
                                   @SessionAttribute(SysConstant.SESSION_ADMIN)Admin admin,
@@ -175,7 +175,7 @@ public class GoogleVerificationController {
      * @param admin
      * @return true
      */
-    @RequiresPermissions("google:auth:bind")
+    //@RequiresPermissions("google:auth:bind")
     @RequestMapping(value = "/googleAuth" ,method = RequestMethod.POST)
     public MessageResult googleAuth(String codes, @SessionAttribute(SysConstant.SESSION_ADMIN)Admin admin,String secret) {
         long code = Long.parseLong(codes);

@@ -36,7 +36,7 @@ public class InviteManagementController extends BaseController {
      *
      * @return
      */
-    @RequiresPermissions("invite/management:query")
+    //@RequiresPermissions("invite/management:query")
     @AccessLog(module = AdminModule.CMS, operation = "邀请管理默认查询所有的用户")
     @RequestMapping(value = "look", method = RequestMethod.POST)
     public MessageResult lookAll(@RequestBody InviteManagementVO inviteManagementVO) {

@@ -47,7 +47,7 @@ public class AdminAdvertiseController extends BaseAdminController {
     @Autowired
     private LocaleMessageSourceService messageSource;
 
-    @RequiresPermissions("otc:advertise:detail")
+    //@RequiresPermissions("otc:advertise:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.OTC, operation = "后台广告Advertise详情")
     public MessageResult detail(Long id) {
@@ -59,7 +59,7 @@ public class AdminAdvertiseController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"), one);
     }
 
-    @RequiresPermissions("otc:advertise:alter-status")
+    //@RequiresPermissions("otc:advertise:alter-status")
     @PostMapping("alter-status")
     @AccessLog(module = AdminModule.OTC, operation = "修改后台广告Advertise状态")
     public MessageResult statue(
@@ -75,7 +75,7 @@ public class AdminAdvertiseController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("otc:advertise:page-query")
+    //@RequiresPermissions("otc:advertise:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.OTC, operation = "分页查找后台广告Advertise")
     public MessageResult page(PageModel pageModel, AdvertiseScreen screen) {
@@ -84,7 +84,7 @@ public class AdminAdvertiseController extends BaseAdminController {
         return success(all);
     }
 
-    @RequiresPermissions("otc:advertise:out-excel")
+    //@RequiresPermissions("otc:advertise:out-excel")
     @GetMapping("out-excel")
     @AccessLog(module = AdminModule.OTC, operation = "导出后台广告Advertise Excel")
     public MessageResult outExcel(

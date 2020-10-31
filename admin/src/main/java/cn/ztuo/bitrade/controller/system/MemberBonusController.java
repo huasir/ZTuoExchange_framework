@@ -39,7 +39,7 @@ public class MemberBonusController extends BaseAdminController{
      * @return
      */
     @RequestMapping(value = "/page-query",method = RequestMethod.POST)
-    @RequiresPermissions("system:member-bonus:info")
+    //@RequiresPermissions("system:member-bonus:info")
     public MessageResult findAllCondition(@RequestParam(value = "memberId",required = false)Long memberId,
                                           @RequestParam(value = "phone",required = false)String phone,
                                           @RequestParam(value = "pageNo", defaultValue = "1") Integer pageNo,

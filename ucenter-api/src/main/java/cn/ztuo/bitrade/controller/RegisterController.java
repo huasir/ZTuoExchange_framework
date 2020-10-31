@@ -267,10 +267,10 @@ public class RegisterController extends BaseController{
     public MessageResult loginByPhone(
             @Valid LoginByPhone loginByPhone,
             BindingResult bindingResult,HttpServletRequest request) throws Exception {
-        MessageResult result = BindingResultUtil.validate(bindingResult);
-        if (result != null) {
-            return result;
-        }
+//        MessageResult result = BindingResultUtil.validate(bindingResult);
+//        if (result != null) {
+//            return result;
+//        }
 
         String ip = getRemoteIp(request);
         //防水验证
@@ -278,22 +278,28 @@ public class RegisterController extends BaseController{
 //        if (!resultProof) {
 //            return error("验证码验证失败,请重新获取验证码");
 //        }
-        if (loginByPhone.getCountry().equals("中国")) {
-            Assert.isTrue(ValidateUtil.isMobilePhone(loginByPhone.getPhone().trim()), localeMessageSourceService.getMessage("PHONE_EMPTY_OR_INCORRECT"));
-        }
 
+
+
+//        if (loginByPhone.getCountry().equals("中国")) {
+//            Assert.isTrue(ValidateUtil.isMobilePhone(loginByPhone.getPhone().trim()), localeMessageSourceService.getMessage("PHONE_EMPTY_OR_INCORRECT"));
+//        }
+//
         String phone = loginByPhone.getPhone();
+//
+//        Object code = redisUtil.get(SysConstant.PHONE_REG_CODE_PREFIX + phone);
+//
+//        isTrue(!memberService.phoneIsExist(phone), localeMessageSourceService.getMessage("PHONE_ALREADY_EXISTS"));
+//        isTrue(!memberService.usernameIsExist(loginByPhone.getUsername()), localeMessageSourceService.getMessage("USERNAME_ALREADY_EXISTS"));
+//        notNull(code, localeMessageSourceService.getMessage("VERIFICATION_CODE_NOT_EXISTS"));
+//        if (!code.toString().equals(loginByPhone.getCode())) {
+//            return error(localeMessageSourceService.getMessage("VERIFICATION_CODE_INCORRECT"));
+//        } else {
+//            redisUtil.delete(SysConstant.PHONE_REG_CODE_PREFIX + phone);
+//        }
 
-        Object code = redisUtil.get(SysConstant.PHONE_REG_CODE_PREFIX + phone);
 
-        isTrue(!memberService.phoneIsExist(phone), localeMessageSourceService.getMessage("PHONE_ALREADY_EXISTS"));
-        isTrue(!memberService.usernameIsExist(loginByPhone.getUsername()), localeMessageSourceService.getMessage("USERNAME_ALREADY_EXISTS"));
-        notNull(code, localeMessageSourceService.getMessage("VERIFICATION_CODE_NOT_EXISTS"));
-        if (!code.toString().equals(loginByPhone.getCode())) {
-            return error(localeMessageSourceService.getMessage("VERIFICATION_CODE_INCORRECT"));
-        } else {
-            redisUtil.delete(SysConstant.PHONE_REG_CODE_PREFIX + phone);
-        }
+
         //不可重复随机数
         String loginNo = String.valueOf(idWorkByTwitter.nextId());
         //盐

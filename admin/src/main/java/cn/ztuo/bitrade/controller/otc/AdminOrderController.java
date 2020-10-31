@@ -44,7 +44,7 @@ public class AdminOrderController extends BaseController {
     @Autowired
     private LocaleMessageSourceService messageSource;
 
-    @RequiresPermissions("otc:order:all")
+    //@RequiresPermissions("otc:order:all")
     @PostMapping("all")
     @AccessLog(module = AdminModule.OTC, operation = "所有法币交易订单Order")
     public MessageResult all() {
@@ -54,7 +54,7 @@ public class AdminOrderController extends BaseController {
         return error(messageSource.getMessage("NO_DATA"));
     }
 
-    @RequiresPermissions("otc:order:detail")
+    //@RequiresPermissions("otc:order:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.OTC, operation = "法币交易订单Order详情")
     public MessageResult detail(Long id) {
@@ -65,7 +65,7 @@ public class AdminOrderController extends BaseController {
     }
 
     //修改订单状态
-    @RequiresPermissions("otc:order:alert-status")
+    //@RequiresPermissions("otc:order:alert-status")
     @PatchMapping("{id}/alert-status")
     @AccessLog(module = AdminModule.OTC, operation = "修改法币交易订单Order")
     public MessageResult status(
@@ -79,7 +79,7 @@ public class AdminOrderController extends BaseController {
     }
 
 
-    @RequiresPermissions(value = {"otc:order:page-query","finance:otc:order:page-query"},logical = Logical.OR)
+    //@RequiresPermissions(value = {"otc:order:page-query","finance:otc:order:page-query"},logical = Logical.OR)
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.OTC, operation = "分页查找法币交易订单Order")
     public MessageResult page(
@@ -126,7 +126,7 @@ public class AdminOrderController extends BaseController {
     }
 
 
-    @RequiresPermissions("otc:order:get-order-num")
+    //@RequiresPermissions("otc:order:get-order-num")
     @PostMapping("get-order-num")
     @AccessLog(module = AdminModule.OTC, operation = "后台首页订单总数接口")
     public MessageResult getOrderNum() {
@@ -140,7 +140,7 @@ public class AdminOrderController extends BaseController {
      * @param response
      * @throws Exception
      */
-    @RequiresPermissions("otc:order:out-excel")
+    //@RequiresPermissions("otc:order:out-excel")
     @GetMapping("out-excel")
     @AccessLog(module = AdminModule.OTC, operation = "导出法币交易订单Order Excel")
     public void outExcel(

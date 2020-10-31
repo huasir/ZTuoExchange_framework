@@ -124,7 +124,7 @@ public class UploadController extends BaseController {
         }
     }
 
-    @RequiresPermissions("common:upload:oss:base64")
+    //@RequiresPermissions("common:upload:oss:base64")
     @RequestMapping(value = "/oss/base64", method = RequestMethod.POST)
     @ResponseBody
     @AccessLog(module = AdminModule.COMMON, operation = "base64上传oss")

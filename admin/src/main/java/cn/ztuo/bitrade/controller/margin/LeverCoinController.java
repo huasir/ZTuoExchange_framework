@@ -93,7 +93,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param leverCoin
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:merge")
+    //@RequiresPermissions("lever:lever-coin:merge")
     @RequestMapping(value = "merge", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.EXCHANGE, operation = "添加杠杆币对")
     public MessageResult exchangeCoinList(
@@ -118,7 +118,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param pageModel
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:page-query")
+    //@RequiresPermissions("lever:lever-coin:page-query")
     @RequestMapping(value = "page_query", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "分页查找杠杆币对")
     public MessageResult exchangeCoinList(PageModel pageModel) {
@@ -153,7 +153,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param symbol
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:page-query")
+    //@RequiresPermissions("lever:lever-coin:page-query")
     @RequestMapping(value = "detail", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "杠杆币对详情")
     public MessageResult detail(
@@ -170,7 +170,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param ids
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:deletes")
+    //@RequiresPermissions("lever:lever-coin:deletes")
     @RequestMapping(value = "deletes", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "杠杆币对删除")
     public MessageResult deletes(
@@ -191,7 +191,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param minTurnOutAmount
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:alter-rate")
+    //@RequiresPermissions("lever:lever-coin:alter-rate")
     @RequestMapping(value = "alter_rate", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "修改杠杆交易币对")
     public MessageResult alterExchangeCoinRate(
@@ -239,7 +239,7 @@ public class LeverCoinController extends BaseAdminController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("lever:lever-coin:out_excel")
+    //@RequiresPermissions("lever:lever-coin:out_excel")
     @RequestMapping(value = "out_excel", method = RequestMethod.GET)
     @AccessLog(module = AdminModule.MARGIN, operation = "导出杠杆币对 Excel")
     public MessageResult outExcel(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -253,7 +253,7 @@ public class LeverCoinController extends BaseAdminController {
      * @return
      */
     @AccessLog(module = AdminModule.MARGIN, operation = "获取所有交易区币种的单位")
-    @RequiresPermissions("lever:lever-coin:all_base_symbol_units")
+    //@RequiresPermissions("lever:lever-coin:all_base_symbol_units")
     @RequestMapping(value = "all_base_symbol_units", method = RequestMethod.GET)
     public MessageResult getAllBaseSymbolUnits() {
         List<String> list = leverCoinService.getBaseSymbol();
@@ -266,7 +266,7 @@ public class LeverCoinController extends BaseAdminController {
      * @return
      */
     @AccessLog(module = AdminModule.MARGIN, operation = "获取交易区币种 所支持的交易 币种")
-    @RequiresPermissions("lever:lever-coin:all_coin_symbol_units")
+    //@RequiresPermissions("lever:lever-coin:all_coin_symbol_units")
     @RequestMapping(value = "all_coin_symbol_units", method = RequestMethod.POST)
     public MessageResult getAllCoinSymbolUnits(@RequestParam("baseSymbol") String baseSymbol) {
         List<String> list = leverCoinService.getCoinSymbol(baseSymbol);
@@ -279,7 +279,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param memberId
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:list")
+    //@RequiresPermissions("lever:lever-coin:list")
     @RequestMapping(value = "list", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "查询杠杆交易钱包")
     public MessageResult listLeverWallet(String symbol, Long memberId, Integer pageNum, Integer pageSize) {
@@ -404,7 +404,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param pageModel
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:transfer")
+    //@RequiresPermissions("lever:lever-coin:transfer")
     @RequestMapping(value = "transfer", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "查询划转记录")
     public MessageResult listTransferRecord(String symbol, String coinUnit, Integer type, String userName, PageModel pageModel) {
@@ -440,7 +440,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param wallet
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:lock_wallet")
+    //@RequiresPermissions("lever:lever-coin:lock_wallet")
     @RequestMapping(value = "lock_wallet", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "锁定杠杆账户或解锁")
     public MessageResult lockWallet(LeverWallet wallet) {
@@ -458,7 +458,7 @@ public class LeverCoinController extends BaseAdminController {
      * @param pageModel
      * @return
      */
-    @RequiresPermissions("lever:lever-coin:risk_list")
+    //@RequiresPermissions("lever:lever-coin:risk_list")
     @RequestMapping(value = "risk_list", method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "查询各个杠杆用户风险率")
     public MessageResult riskList(PageModel pageModel) {

@@ -85,7 +85,7 @@ public class CoinController extends BaseAdminController {
         return result;
     }
 
-    @RequiresPermissions("system:coin:create")
+    //@RequiresPermissions("system:coin:create")
     @PostMapping("create")
     @AccessLog(module = AdminModule.SYSTEM, operation = "创建后台货币Coin")
     public MessageResult create(@Valid Coin coin, Double txFee, BindingResult bindingResult) {
@@ -128,7 +128,7 @@ public class CoinController extends BaseAdminController {
         return success(list);
     }
 
-    @RequiresPermissions("system:coin:update")
+    //@RequiresPermissions("system:coin:update")
     @PostMapping("update")
     @AccessLog(module = AdminModule.SYSTEM, operation = "更新后台货币Coin")
     public MessageResult update(
@@ -155,7 +155,7 @@ public class CoinController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("system:coin:detail")
+    //@RequiresPermissions("system:coin:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.SYSTEM, operation = "后台货币Coin详情")
     public MessageResult detail(@RequestParam("name") String name) {
@@ -164,7 +164,7 @@ public class CoinController extends BaseAdminController {
         return success(coin);
     }
 
-    @RequiresPermissions("system:coin:page-query")
+    //@RequiresPermissions("system:coin:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.SYSTEM, operation = "分页查找后台货币Coin")
     public MessageResult pageQuery(PageModel pageModel) {
@@ -213,7 +213,7 @@ public class CoinController extends BaseAdminController {
         return new BigDecimal("0");
     }
 
-    @RequiresPermissions("system:coin:update")
+    //@RequiresPermissions("system:coin:update")
     @GetMapping("outExcel")
     @AccessLog(module = AdminModule.SYSTEM, operation = "导出后台货币Coin Excel")
     public MessageResult outExcel(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -221,7 +221,7 @@ public class CoinController extends BaseAdminController {
         return new FileUtil().exportExcel(request, response, all, "coin");
     }
 
-    @RequiresPermissions("system:coin:update")
+    //@RequiresPermissions("system:coin:update")
     @PostMapping("delete/{name}")
     @AccessLog(module = AdminModule.SYSTEM, operation = "删除后台货币Coin")
     public MessageResult Delete(@PathVariable("name") String name) {
@@ -231,7 +231,7 @@ public class CoinController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("system:coin:update")
+    //@RequiresPermissions("system:coin:update")
     @PostMapping("set/platform")
     @AccessLog(module = AdminModule.SYSTEM, operation = "设置平台币")
     public MessageResult setPlatformCoin(@RequestParam("name") String name) {
@@ -251,7 +251,7 @@ public class CoinController extends BaseAdminController {
      * @param code   验证码
      * @return
      */
-    @RequiresPermissions("system:coin:transfer")
+    //@RequiresPermissions("system:coin:transfer")
     @PostMapping("transfer")
     @org.springframework.transaction.annotation.Transactional(rollbackFor = Exception.class)
     @AccessLog(module = AdminModule.SYSTEM, operation = "热钱包转账至冷钱包")
@@ -303,7 +303,7 @@ public class CoinController extends BaseAdminController {
         return error(messageSource.getMessage("REQUEST_FAILED"));
     }
 
-    @RequiresPermissions("system:coin:hot-transfer-record:page-query")
+    //@RequiresPermissions("system:coin:hot-transfer-record:page-query")
     @PostMapping("/hot-transfer-record/page-query")
     @AccessLog(module = AdminModule.SYSTEM, operation = "热钱包转账至冷钱包记录分页查询")
     public MessageResult page(PageModel pageModel, String unit) {

@@ -68,7 +68,7 @@ public class WithdrawRecordController extends BaseAdminController {
     @Value("${bdtop.system.md5.key}")
     private String md5Key;
 
-    @RequiresPermissions("finance:withdraw-record:all")
+    //@RequiresPermissions("finance:withdraw-record:all")
     @GetMapping("/all")
     @AccessLog(module = AdminModule.FINANCE, operation = "所有提现记录WithdrawRecord")
     public MessageResult all() {
@@ -79,7 +79,7 @@ public class WithdrawRecordController extends BaseAdminController {
         return success(withdrawRecordList);
     }
 
-    @RequiresPermissions(value = {"finance:withdraw-record:page-query", "finance:withdraw-record:page-query:success"}, logical = Logical.OR)
+    //@RequiresPermissions(value = {"finance:withdraw-record:page-query", "finance:withdraw-record:page-query:success"}, logical = Logical.OR)
     @RequestMapping("/page-query")
     @AccessLog(module = AdminModule.FINANCE, operation = "分页查询提现记录WithdrawRecord")
     public MessageResult pageQuery(
@@ -118,7 +118,7 @@ public class WithdrawRecordController extends BaseAdminController {
     }
 
     @GetMapping("/{id}")
-    @RequiresPermissions("finance:withdraw-record:detail")
+    //@RequiresPermissions("finance:withdraw-record:detail")
     @AccessLog(module = AdminModule.FINANCE, operation = "提现记录WithdrawRecord 详情")
     public MessageResult detail(@PathVariable("id") Long id) {
         WithdrawRecord withdrawRecord = withdrawRecordService.findOne(id);
@@ -127,7 +127,7 @@ public class WithdrawRecordController extends BaseAdminController {
     }
 
     //一键审核通过
-    @RequiresPermissions("finance:withdraw-record:audit-pass")
+    //@RequiresPermissions("finance:withdraw-record:audit-pass")
     @PatchMapping("/audit-pass")
     @AccessLog(module = AdminModule.FINANCE, operation = "提现记录WithdrawRecord一键审核通过")
     public MessageResult auditPass(@RequestParam("ids") Long[] ids) {
@@ -136,7 +136,7 @@ public class WithdrawRecordController extends BaseAdminController {
     }
 
     //一键审核不通过
-    @RequiresPermissions("finance:withdraw-record:audit-no-pass")
+    //@RequiresPermissions("finance:withdraw-record:audit-no-pass")
     @PatchMapping("/audit-no-pass")
     @AccessLog(module = AdminModule.FINANCE, operation = "提现记录WithdrawRecord一键审核不通过")
     public MessageResult auditNoPass(@RequestParam("ids") Long[] ids) {
@@ -151,7 +151,7 @@ public class WithdrawRecordController extends BaseAdminController {
      * @param transactionNumber
      * @return
      */
-    @RequiresPermissions("finance:withdraw-record:add-transaction-number")
+    //@RequiresPermissions("finance:withdraw-record:add-transaction-number")
     @PatchMapping("/add-transaction-number")
     @AccessLog(module = AdminModule.FINANCE, operation = "添加交易流水号")
     @Transactional(rollbackFor = Exception.class)
@@ -184,7 +184,7 @@ public class WithdrawRecordController extends BaseAdminController {
     }
 
     //批量打款
-    @RequiresPermissions("finance:withdraw-record:remittance")
+    //@RequiresPermissions("finance:withdraw-record:remittance")
     @PatchMapping("/remittance")
     @AccessLog(module = AdminModule.FINANCE, operation = "提现记录/批量打款")
     @Transactional(rollbackFor = Exception.class)
@@ -228,7 +228,7 @@ public class WithdrawRecordController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("finance:withdraw-record:audit-pass")
+    //@RequiresPermissions("finance:withdraw-record:audit-pass")
     @PostMapping("autuWithdraw")
     @AccessLog(module = AdminModule.FINANCE, operation = "审核通过自动打款")
     public MessageResult authWithdraw(@RequestParam("ids") Long[] ids){

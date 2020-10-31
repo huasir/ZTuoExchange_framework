@@ -29,7 +29,7 @@ public class MemberSignRecordControler extends BaseAdminController {
     @Autowired
     private MemberSignRecordService service;
 
-    @RequiresPermissions("activity:member-sign-record:page-query")
+    //@RequiresPermissions("activity:member-sign-record:page-query")
     @GetMapping("page-query")
     public MessageResult pageQuery(MemberSignRecordScreen screen, PageModel pageModel) {
         Page<MemberSignRecord> source = service.findAllScreen(screen, pageModel);

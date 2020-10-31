@@ -34,7 +34,7 @@ public class TransferAddressController {
     @Autowired
     private TransferAddressService transferAddressService ;
 
-    @RequiresPermissions("system:transfer-address:merge")
+    //@RequiresPermissions("system:transfer-address:merge")
     @PostMapping("merge")
     public MessageResult merge(@Valid TransferAddress transferAddress , @RequestParam("coinName") String coinName){
         Coin coin = coinService.findOne(coinName);
@@ -43,7 +43,7 @@ public class TransferAddressController {
         return MessageResult.success("保存成功");
     }
 
-    @RequiresPermissions("system:transfer-address:page-query")
+    //@RequiresPermissions("system:transfer-address:page-query")
     @PostMapping("page-query")
     public MessageResult pageQuery(PageModel pageModel, TransferAddressScreen transferAddressScreen){
         List<BooleanExpression> booleanExpressions = new ArrayList<>();
@@ -57,14 +57,14 @@ public class TransferAddressController {
         return MessageResult.getSuccessInstance("获取成功",page);
     }
 
-    @RequiresPermissions("system:transfer-address:detail")
+    //@RequiresPermissions("system:transfer-address:detail")
     @PostMapping("detail")
     public MessageResult detail(Long id){
         TransferAddress transferAddress = transferAddressService.findById(id);
         return MessageResult.getSuccessInstance("获取成功",transferAddress);
     }
 
-    @RequiresPermissions("system:transfer-address:deletes")
+    //@RequiresPermissions("system:transfer-address:deletes")
     @PostMapping("deletes")
     public MessageResult deletes(Long[] ids){
         transferAddressService.deletes(ids);

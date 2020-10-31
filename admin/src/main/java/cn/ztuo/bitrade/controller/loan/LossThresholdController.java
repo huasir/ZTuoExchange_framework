@@ -45,7 +45,7 @@ public class LossThresholdController {
      * 查询所有的亏损阈值
      * @return
      */
-    @RequiresPermissions("loss-threshold:all")
+    //@RequiresPermissions("loss-threshold:all")
     @RequestMapping(value = "list",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "查询所有的亏损阈值")
     public MessageResult listLossThreshold(@RequestParam("pageNum") Integer pageNum,@RequestParam("pageSize")Integer pageSize,BooleanEnum booleanEnum){
@@ -75,7 +75,7 @@ public class LossThresholdController {
      * @param performActions
      * @return
      */
-    @RequiresPermissions("loss-threshold:create")
+    //@RequiresPermissions("loss-threshold:create")
     @RequestMapping(value = "create",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "创建亏损阈值")
     public MessageResult create(@RequestParam("coinUnit") String leverCoinSymbol, @RequestParam("threshold")BigDecimal threshold,
@@ -104,7 +104,7 @@ public class LossThresholdController {
      * @param status
      * @return
      */
-    @RequiresPermissions("lossThreshold:update")
+    //@RequiresPermissions("lossThreshold:update")
     @RequestMapping(value = "update",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "修改亏损阈值")
     public MessageResult update(@RequestParam("id")Long id, BigDecimal threshold,
@@ -132,7 +132,7 @@ public class LossThresholdController {
      * @param id
      * @return
      */
-    @RequiresPermissions("lossThreshold:delete")
+    //@RequiresPermissions("lossThreshold:delete")
     @RequestMapping(value = "delete",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.MARGIN, operation = "删除亏损阈值")
     public MessageResult delete(@RequestParam("id")Long id){
@@ -148,7 +148,7 @@ public class LossThresholdController {
      * @return
      */
     @AccessLog(module = AdminModule.MARGIN, operation = "查询借贷记录")
-    @RequiresPermissions("lossThreshold:record")
+    //@RequiresPermissions("lossThreshold:record")
     @RequestMapping(value = "record",method = RequestMethod.POST)
     public MessageResult record(String userName,String symbol,BooleanEnum repayment, PageModel pageModel){
         ArrayList<BooleanExpression> booleanExpressions = new ArrayList<>();

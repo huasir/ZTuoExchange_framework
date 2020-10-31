@@ -45,7 +45,7 @@ public class RoleController extends BaseAdminController {
      */
 
 
-    @RequiresPermissions("system:role:merge")
+    //@RequiresPermissions("system:role:merge")
     @RequestMapping("merge")
     @Transactional(rollbackFor = Exception.class)
     @AccessLog(module = AdminModule.SYSTEM, operation = "创建或修改角色SysRole")
@@ -70,7 +70,7 @@ public class RoleController extends BaseAdminController {
      *
      * @return
      */
-    @RequiresPermissions("system:role:permission:all")
+    //@RequiresPermissions("system:role:permission:all")
     @RequestMapping("permission/all")
     @AccessLog(module = AdminModule.SYSTEM, operation = "全部权限树Menu")
     public MessageResult allMenu() {
@@ -86,7 +86,7 @@ public class RoleController extends BaseAdminController {
      * @param roleId
      * @return
      */
-    @RequiresPermissions("system:role:permission")
+    //@RequiresPermissions("system:role:permission")
     @RequestMapping("permission")
     @AccessLog(module = AdminModule.SYSTEM, operation = "角色拥有的权限Menu")
     public MessageResult roleAllPermission(Long roleId) {
@@ -103,7 +103,7 @@ public class RoleController extends BaseAdminController {
      * @param permissionId
      * @return
      */
-    //@RequiresPermissions("system:role:permission:update")
+    ////@RequiresPermissions("system:role:permission:update")
    /* @RequestMapping("permission/update")
     @Transactional(rollbackFor = Exception.class)
     @AccessLog(module = AdminModule.SYSTEM, operation = "更改角色拥有的权限Menu")
@@ -125,7 +125,7 @@ public class RoleController extends BaseAdminController {
      *
      * @return
      */
-    @RequiresPermissions("system:role:all")
+    //@RequiresPermissions("system:role:all")
     @RequestMapping("all")
     @AccessLog(module = AdminModule.SYSTEM, operation = "所有角色SysRole")
     public MessageResult getAllRole(PageModel pageModel) {
@@ -138,7 +138,7 @@ public class RoleController extends BaseAdminController {
      *
      * @return
      */
-    @RequiresPermissions("system:role:deletes")
+    //@RequiresPermissions("system:role:deletes")
     @RequestMapping("deletes")
     @AccessLog(module = AdminModule.SYSTEM, operation = "删除角色SysRole")
     public MessageResult deletes(Long id) {

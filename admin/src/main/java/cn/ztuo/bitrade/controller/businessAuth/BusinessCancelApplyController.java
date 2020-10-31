@@ -52,7 +52,7 @@ public class BusinessCancelApplyController extends BaseController {
     private OtcWalletService otcWalletService;
 
     @PostMapping("page-query")
-    @RequiresPermissions("business:cancel-apply:page-query")
+    //@RequiresPermissions("business:cancel-apply:page-query")
     public MessageResult pageQuery(
             PageModel pageModel,
             @RequestParam(value = "account", required = false) String account,
@@ -90,7 +90,7 @@ public class BusinessCancelApplyController extends BaseController {
      * @param reason  审核不通过的理由
      * @return
      */
-    @RequiresPermissions("business:cancel-apply:check")
+    //@RequiresPermissions("business:cancel-apply:check")
     @PostMapping("check")
     @Transactional(rollbackFor = Exception.class)
     public MessageResult pass(
@@ -182,7 +182,7 @@ public class BusinessCancelApplyController extends BaseController {
      */
 
     @PostMapping("detail")
-    @RequiresPermissions("business:cancel-apply:detail")
+    //@RequiresPermissions("business:cancel-apply:detail")
     public MessageResult detail(@RequestParam(value = "id") Long id) {
         BusinessCancelApply businessCancelApply = businessCancelApplyService.findById(id);
         DepositRecord depositRecord = depositRecordService.findOne(businessCancelApply.getDepositRecordId());

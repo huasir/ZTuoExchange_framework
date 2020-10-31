@@ -54,7 +54,7 @@ public class ExchangeCoinController extends BaseAdminController {
 
 
 
-    @RequiresPermissions("exchange:exchange-coin:merge")
+    //@RequiresPermissions("exchange:exchange-coin:merge")
     @PostMapping("merge")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "分页查找币币交易手续费exchangeCoin")
     public MessageResult ExchangeCoinList(
@@ -81,7 +81,7 @@ public class ExchangeCoinController extends BaseAdminController {
         return MessageResult.getSuccessInstance(messageSource.getMessage("SUCCESS"), exchangeCoin);
     }
 
-    @RequiresPermissions("exchange:exchange-coin:page-query")
+    //@RequiresPermissions("exchange:exchange-coin:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "分页查找币币交易手续费exchangeCoin")
     public MessageResult ExchangeCoinList(PageModel pageModel) {
@@ -97,7 +97,7 @@ public class ExchangeCoinController extends BaseAdminController {
         return success(all);
     }
 
-    @RequiresPermissions("exchange:exchange-coin:detail")
+    //@RequiresPermissions("exchange:exchange-coin:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "币币交易手续费exchangeCoin 详情")
     public MessageResult detail(
@@ -107,7 +107,7 @@ public class ExchangeCoinController extends BaseAdminController {
         return success(exchangeCoin);
     }
 
-    @RequiresPermissions("exchange:exchange-coin:deletes")
+    //@RequiresPermissions("exchange:exchange-coin:deletes")
     @PostMapping("deletes")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "币币交易手续费exchangeCoin 删除")
     public MessageResult deletes(
@@ -116,7 +116,7 @@ public class ExchangeCoinController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("exchange:exchange-coin:alter-rate")
+    //@RequiresPermissions("exchange:exchange-coin:alter-rate")
     @PostMapping("alter-rate")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "修改币币交易手续费exchangeCoin")
     public MessageResult alterExchangeCoinRate(
@@ -193,7 +193,7 @@ public class ExchangeCoinController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("exchange:exchange-coin:out-excel")
+    //@RequiresPermissions("exchange:exchange-coin:out-excel")
     @GetMapping("out-excel")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "导出币币交易手续费exchangeCoin Excel")
     public MessageResult outExcel(HttpServletRequest request, HttpServletResponse response) throws Exception {

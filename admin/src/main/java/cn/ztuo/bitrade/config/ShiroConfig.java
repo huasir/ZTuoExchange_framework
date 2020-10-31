@@ -42,11 +42,22 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         //拦截器.
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
+//        filterChainDefinitionMap.put("/captcha", "anon");
+//        filterChainDefinitionMap.put("/admin/code/**", "anon");
+//        filterChainDefinitionMap.put("admin/**/page-query", "user");
+//        filterChainDefinitionMap.put("/admin/employee/logout", "logout");
+//        filterChainDefinitionMap.put("admin/**/detail", "authc");
+
+
         filterChainDefinitionMap.put("/captcha", "anon");
         filterChainDefinitionMap.put("/admin/code/**", "anon");
         filterChainDefinitionMap.put("admin/**/page-query", "user");
-        filterChainDefinitionMap.put("/admin/employee/logout", "logout");
-        filterChainDefinitionMap.put("admin/**/detail", "authc");
+//        filterChainDefinitionMap.put("/admin/employee/logout", "logout");
+        filterChainDefinitionMap.put("admin/**/detail", "user");
+
+
+
+
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
         /*shiroFilterFactoryBean.setU("/403");*/
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
@@ -149,7 +160,7 @@ public class ShiroConfig {
     }
 
     /**
-     * 开启Shiro的注解(如@RequiresRoles,@RequiresPermissions),
+     * 开启Shiro的注解(如@RequiresRoles,//@RequiresPermissions),
      * 需借助SpringAOP扫描使用Shiro注解的类,并在必要时进行安全逻辑验证 * 配置以下两个bean
      * (DefaultAdvisorAutoProxyCreator(可选)和AuthorizationAttributeSourceAdvisor)即可实现此功能 * @return
      */

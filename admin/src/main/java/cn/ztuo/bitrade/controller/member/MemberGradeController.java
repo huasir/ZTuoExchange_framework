@@ -27,7 +27,7 @@ public class MemberGradeController extends BaseController {
     @Autowired
     private MemberGradeService gradeService ;
 
-    @RequiresPermissions("member:member-grade:all")
+    //@RequiresPermissions("member:member-grade:all")
     @RequestMapping(value = "all",method = RequestMethod.GET)
     @AccessLog(module = AdminModule.MEMBER, operation = "所有会员等级")
     public MessageResult findAll() {
@@ -35,7 +35,7 @@ public class MemberGradeController extends BaseController {
         return success(memberGrades);
     }
 
-    @RequiresPermissions("member:member-grade:update")
+    //@RequiresPermissions("member:member-grade:update")
     @PostMapping("update")
     @AccessLog(module = AdminModule.MEMBER, operation = "更新会员等级")
     @Transactional(rollbackFor = Exception.class)

@@ -24,7 +24,7 @@ public class WebsiteInformationController extends BaseAdminController {
     @Autowired
     private WebsiteInformationService websiteInformationService;
 
-    @RequiresPermissions("system:website-information:find-one")
+    //@RequiresPermissions("system:website-information:find-one")
     @GetMapping("/find-one")
     @AccessLog(module = AdminModule.SYSTEM, operation = "站点信息WebsiteInformation")
     public MessageResult get() {
@@ -35,7 +35,7 @@ public class WebsiteInformationController extends BaseAdminController {
     }
 
 
-    @RequiresPermissions("system:website-information:alter")
+    //@RequiresPermissions("system:website-information:alter")
     @PutMapping("/alter")
     @AccessLog(module = AdminModule.SYSTEM, operation = "更新站点信息WebsiteInformation")
     public MessageResult modify(WebsiteInformation websiteInformation) {

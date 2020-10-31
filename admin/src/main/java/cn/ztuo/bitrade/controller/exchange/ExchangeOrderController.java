@@ -59,7 +59,7 @@ public class ExchangeOrderController extends BaseAdminController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequiresPermissions(value = {"exchange:exchange-order:all","lever:lever-coin:list"}, logical = Logical.OR)
+    //@RequiresPermissions(value = {"exchange:exchange-order:all","lever:lever-coin:list"}, logical = Logical.OR)
     @PostMapping("all")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "查找所有exchangeOrder")
     public MessageResult all() {
@@ -70,7 +70,7 @@ public class ExchangeOrderController extends BaseAdminController {
         return error(messageSource.getMessage("NO_DATA"));
     }
 
-    @RequiresPermissions(value = {"exchange:exchange-order:detail","lever:lever-coin:list"}, logical = Logical.OR)
+    //@RequiresPermissions(value = {"exchange:exchange-order:detail","lever:lever-coin:list"}, logical = Logical.OR)
     @PostMapping("detail")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "exchangeOrder详情")
     public MessageResult detail(String id) {
@@ -85,7 +85,7 @@ public class ExchangeOrderController extends BaseAdminController {
         return success(map);
     }
 
-    @RequiresPermissions(value = {"exchange:exchange-order:page-query","lever:lever-coin:list"}, logical = Logical.OR)
+    //@RequiresPermissions(value = {"exchange:exchange-order:page-query","lever:lever-coin:list"}, logical = Logical.OR)
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "分页查找exchangeOrder")
     public MessageResult page(
@@ -180,7 +180,7 @@ public class ExchangeOrderController extends BaseAdminController {
         return PredicateUtils.getPredicate(booleanExpressions);
     }
 
-    @RequiresPermissions(value = {"exchange:exchange-order:entrust-details","lever:lever-coin:list"}, logical = Logical.OR)
+    //@RequiresPermissions(value = {"exchange:exchange-order:entrust-details","lever:lever-coin:list"}, logical = Logical.OR)
     @PostMapping("entrust-details")
     public MessageResult entrustDetails(ExchangeTradeScreen screen,PageModel pageModel){
        /* ExchangeOrder
@@ -191,7 +191,7 @@ public class ExchangeOrderController extends BaseAdminController {
     }
 
 
-    @RequiresPermissions(value = {"exchange:exchange-order:out-excel","lever:lever-coin:list"}, logical = Logical.OR)
+    //@RequiresPermissions(value = {"exchange:exchange-order:out-excel","lever:lever-coin:list"}, logical = Logical.OR)
     @GetMapping("out-excel")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "导出 exchangeOrder Excel")
     public MessageResult outExcel(
@@ -237,7 +237,7 @@ public class ExchangeOrderController extends BaseAdminController {
         return predicates;
     }
 
-    @RequiresPermissions(value = {"exchange:exchange-order:cancel","lever:lever-coin:list"}, logical = Logical.OR)
+    //@RequiresPermissions(value = {"exchange:exchange-order:cancel","lever:lever-coin:list"}, logical = Logical.OR)
     @PostMapping("cancel")
     @AccessLog(module = AdminModule.EXCHANGE, operation = "取消委托")
     public MessageResult cancelOrder(String orderId) throws Exception{

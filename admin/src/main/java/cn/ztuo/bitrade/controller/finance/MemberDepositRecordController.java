@@ -42,7 +42,7 @@ public class MemberDepositRecordController extends BaseAdminController {
      * @param screen
      * @return
      */
-    @RequiresPermissions("finance:member-deposit:page-query")
+    //@RequiresPermissions("finance:member-deposit:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.FINANCE, operation = "充币记录")
     public MessageResult page(PageModel pageModel, MemberDepositScreen screen) {

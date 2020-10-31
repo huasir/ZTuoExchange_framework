@@ -41,7 +41,7 @@ public class AccessLogController extends BaseAdminController {
     @Autowired
     private AdminService adminService ;
 
-    @RequiresPermissions("system:access-log:all")
+    //@RequiresPermissions("system:access-log:all")
     @GetMapping("/all")
     @AccessLog(module = AdminModule.SYSTEM, operation = "所有操作/访问日志AdminAccessLog")
     public MessageResult all() {
@@ -49,7 +49,7 @@ public class AccessLogController extends BaseAdminController {
         return success(adminAccessLogList);
     }
 
-    @RequiresPermissions("system:access-log:detail")
+    //@RequiresPermissions("system:access-log:detail")
     @GetMapping("/{id}")
     @AccessLog(module = AdminModule.SYSTEM, operation = "操作/访问日志AdminAccessLog 详情")
     public MessageResult detail(@PathVariable("id") Long id) {
@@ -58,7 +58,7 @@ public class AccessLogController extends BaseAdminController {
         return success(adminAccessLog);
     }
 
-    @RequiresPermissions("system:access-log:page-query")
+    //@RequiresPermissions("system:access-log:page-query")
     @GetMapping("/page-query")
     @AccessLog(module = AdminModule.SYSTEM, operation = "分页查找操作/访问日志AdminAccessLog")
     public MessageResult pageQuery(

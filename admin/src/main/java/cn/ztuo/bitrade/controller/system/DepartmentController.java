@@ -37,7 +37,7 @@ public class DepartmentController extends BaseAdminController {
      * @param department
      * @return
      */
-    @RequiresPermissions("system:department:merge")
+    //@RequiresPermissions("system:department:merge")
     @RequestMapping("merge")
     @AccessLog(module = AdminModule.SYSTEM, operation = "创建或更新部门Department")
     @Transactional(rollbackFor = Exception.class)
@@ -59,7 +59,7 @@ public class DepartmentController extends BaseAdminController {
      * @param departmentId
      * @return
      */
-    @RequiresPermissions("system:department:detail")
+    //@RequiresPermissions("system:department:detail")
     @RequestMapping("detail")
     @AccessLog(module = AdminModule.SYSTEM, operation = "部门Department详情")
     public MessageResult detail(Long departmentId) {
@@ -72,7 +72,7 @@ public class DepartmentController extends BaseAdminController {
      *
      * @return
      */
-    @RequiresPermissions("system:department:all")
+    //@RequiresPermissions("system:department:all")
     @RequestMapping("all")
     @AccessLog(module = AdminModule.SYSTEM, operation = "所有部门Department")
     public MessageResult allDepartment(PageModel pageModel) {
@@ -80,7 +80,7 @@ public class DepartmentController extends BaseAdminController {
         return success(all);
     }
 
-    @RequiresPermissions("system:department:deletes")
+    //@RequiresPermissions("system:department:deletes")
     @RequestMapping("deletes")
     @AccessLog(module = AdminModule.SYSTEM, operation = "批量删除部门")
     public MessageResult deletes(@RequestParam(value = "id") Long id) {

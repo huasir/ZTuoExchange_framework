@@ -33,7 +33,7 @@ public class ReleaseBalanceController extends BaseController {
      * @param releaseBalanceVO
      * @throws Exception
      */
-    @RequiresPermissions("release:audit")
+    //@RequiresPermissions("release:audit")
     @AccessLog(module = AdminModule.CMS, operation = "注册审核送币")
     @RequestMapping(value = "updateReleaseBalance", method = RequestMethod.POST)
     public MessageResult updateReleaseBalance(@RequestBody ReleaseBalanceVO releaseBalanceVO) {
@@ -47,7 +47,7 @@ public class ReleaseBalanceController extends BaseController {
     /**
      * 默认查询  释放余额状态为 未审核0 -
      */
-    @RequiresPermissions("release:page-query")
+    //@RequiresPermissions("release:page-query")
     @AccessLog(module = AdminModule.CMS, operation = "默认查询  释放余额状态为 未审核 ")
     @RequestMapping(value = "allReleaseBalanceState", method = RequestMethod.POST)
     public MessageResult allReleaseBalanceState(@RequestBody ReleaseBalanceVO releaseBalanceVO) {

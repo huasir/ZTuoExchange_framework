@@ -25,7 +25,7 @@ public class HTLExchangeInitPlateController {
     @Autowired
     private RedisUtil redisUtil;
 
-    @RequiresPermissions("exchange:htl-init-plate:query")
+    //@RequiresPermissions("exchange:htl-init-plate:query")
     @PostMapping("query")
     public MessageResult queryExchangeInitPlate()throws Exception{
         MessageResult mr =new MessageResult();
@@ -43,7 +43,7 @@ public class HTLExchangeInitPlateController {
         return mr;
 
     }
-    @RequiresPermissions("exchange:htl-init-plate:detail")
+    //@RequiresPermissions("exchange:htl-init-plate:detail")
     @GetMapping("detail/{id}")
     public MessageResult queryDetailExchangeInitPlate(@PathVariable("id")long id)throws Exception{
         MessageResult mr = new MessageResult();
@@ -66,7 +66,7 @@ public class HTLExchangeInitPlateController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("exchange:htl-init-plate:delete")
+    //@RequiresPermissions("exchange:htl-init-plate:delete")
     @GetMapping("delete/{id}")
     public MessageResult deleteExchangeInitPlate(@PathVariable("id")long id)throws Exception{
         MessageResult mr = new MessageResult();
@@ -96,7 +96,7 @@ public class HTLExchangeInitPlateController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("exchange:htl-init-plate:update")
+    //@RequiresPermissions("exchange:htl-init-plate:update")
     @PostMapping("update")
     public MessageResult updateExchangeInitPlate(InitPlate initPlate)throws Exception{
         MessageResult mr = new MessageResult();

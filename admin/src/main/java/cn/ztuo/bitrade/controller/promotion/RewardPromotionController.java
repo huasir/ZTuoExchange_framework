@@ -41,7 +41,7 @@ public class RewardPromotionController extends BaseAdminController {
     @Autowired
     private LocaleMessageSourceService messageSource;
 
-    @RequiresPermissions("promotion:reward:merge")
+    //@RequiresPermissions("promotion:reward:merge")
     @PostMapping("merge")
     @AccessLog(module = AdminModule.SYSTEM, operation = "创建修改邀请奖励设置")
     public MessageResult merge(@Valid RewardPromotionSetting setting, @SessionAttribute(SysConstant.SESSION_ADMIN)Admin admin
@@ -61,7 +61,7 @@ public class RewardPromotionController extends BaseAdminController {
         return MessageResult.success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("promotion:reward:detail")
+    //@RequiresPermissions("promotion:reward:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.SYSTEM, operation = "邀请奖励设置详情")
     public MessageResult detail(@RequestParam("id")Long id) {
@@ -87,7 +87,7 @@ public class RewardPromotionController extends BaseAdminController {
      * @param type
      * @return
      */
-    @RequiresPermissions("promotion:reward:page-query")
+    //@RequiresPermissions("promotion:reward:page-query")
     @GetMapping("page-query")
     @AccessLog(module = AdminModule.SYSTEM, operation = "分页查询邀请奖励设置")
     public MessageResult pageQuery(
@@ -108,7 +108,7 @@ public class RewardPromotionController extends BaseAdminController {
         return success(all);
     }
 
-    @RequiresPermissions("promotion:reward:deletes")
+    //@RequiresPermissions("promotion:reward:deletes")
     @DeleteMapping("deletes")
     @AccessLog(module = AdminModule.SYSTEM, operation = "批量删除邀请奖励设置")
     @Transactional(rollbackFor = Exception.class)

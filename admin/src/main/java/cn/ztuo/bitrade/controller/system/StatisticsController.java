@@ -38,7 +38,7 @@ public class StatisticsController extends BaseAdminController {
      * @description 查询新增用户 曲线
      * @date 2018/1/8 16:25
      */
-    @RequiresPermissions("system:statistics:member-statistics")
+    //@RequiresPermissions("system:statistics:member-statistics")
     @PostMapping("member-statistics")
     @AccessLog(module = AdminModule.SYSTEM, operation = "查询新增用户 曲线")
     public MessageResult memberStatistics(String startTime, String endTime) {
@@ -56,7 +56,7 @@ public class StatisticsController extends BaseAdminController {
      * @description 委托量曲线
      * @date 2018/1/9 13:52
      */
-    @RequiresPermissions("system:statistics:delegation-statistics")
+    //@RequiresPermissions("system:statistics:delegation-statistics")
     @PostMapping("delegation-statistics")
     @AccessLog(module = AdminModule.SYSTEM, operation = "委托量曲线")
     public MessageResult delegationStatistics(String startTime, String endTime) {
@@ -74,7 +74,7 @@ public class StatisticsController extends BaseAdminController {
      * @description 交易量 订单量
      * @date 2018/1/9 14:50
      */
-    @RequiresPermissions("system:statistics:order-statistics")
+    //@RequiresPermissions("system:statistics:order-statistics")
     @PostMapping("order-statistics")
     @AccessLog(module = AdminModule.SYSTEM, operation = "交易量 订单量")
     public MessageResult orderStatistics(String startTime, String endTime) {
@@ -87,7 +87,7 @@ public class StatisticsController extends BaseAdminController {
         return error("请求数据不存在");
     }
 
-    @RequiresPermissions("system:statistics:dashboard")
+    //@RequiresPermissions("system:statistics:dashboard")
     @PostMapping("dashboard")
     @AccessLog(module = AdminModule.SYSTEM, operation = "dashboard")
     public MessageResult dashboard() {
@@ -114,7 +114,7 @@ public class StatisticsController extends BaseAdminController {
         return success(map);
     }
 
-    /*@RequiresPermissions("system:statistics:order-rate")
+    /*//@RequiresPermissions("system:statistics:order-rate")
     @PostMapping("order-rate")
     @AccessLog(module = AdminModule.SYSTEM, operation = "订单手续费统计")
     public Pagenation<OrderDetailAggregation> detail(

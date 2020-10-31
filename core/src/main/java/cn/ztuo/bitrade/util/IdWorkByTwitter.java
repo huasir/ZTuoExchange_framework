@@ -147,6 +147,10 @@ public class IdWorkByTwitter {
                 | sequence;
     }
 
+    public static void main(String[] args) {
+        System.out.println(new IdWorkByTwitter(0,0).nextId());
+    }
+
     /**
      * 阻塞到下一个毫秒，直到获得新的时间戳
      *

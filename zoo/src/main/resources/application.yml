@@ -1,0 +1,24 @@
+server:
+  port: 28080
+eureka.client.register-with-eureka: false
+eureka.client.fetchRegistry: false
+eureka.client.server.waitTimeInMsWhenSyncEmpty: 0
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  ignoredHeaders: Access-Control-Allow-Credentials,Access-Control-Allow-Origin
+  routes:
+    market:
+      path: /market/**
+      url: http://101.32.11.45:6004/market/
+    exchange-api:
+      path: /exchange/**
+      url: http://101.32.11.45:6003/exchange/
+    uc:
+      path: /uc/**
+      url: http://101.32.36.139:6001/uc/
+    admin:
+      path: /admin/**
+      url: http://101.32.36.139:6010/admin/
+    chat:
+      path: /chat/**
+      url: http://101.32.36.139:6008/chat/

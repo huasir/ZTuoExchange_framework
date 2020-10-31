@@ -27,6 +27,7 @@
 		<module>open-api</module>
 		<module>margin-core</module>
         <module>netty</module>
+        <module>zoo</module>
     </modules>
 
 	<parent>

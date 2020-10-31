@@ -18,7 +18,7 @@ public class CheckExchangeRate {
     private RestTemplate restTemplate;
     @Autowired
     private CoinExchangeFactory factory;
-    private String serviceName = "bitrade-market";
+    private String serviceName = "101.32.11.45:6004";
 
     @Scheduled(fixedRate = 60 * 1000)
     public void syncRate() {

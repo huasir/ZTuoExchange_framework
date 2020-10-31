@@ -37,7 +37,7 @@ public class AnnouncementController extends BaseController {
     @Autowired
     private LocaleMessageSourceService messageSource;
 
-    @RequiresPermissions("system:announcement:create")
+    //@RequiresPermissions("system:announcement:create")
     @PostMapping("create")
     public MessageResult create(
             @RequestParam String title,
@@ -53,7 +53,7 @@ public class AnnouncementController extends BaseController {
         return success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("system:announcement:top")
+    //@RequiresPermissions("system:announcement:top")
     @PostMapping("top")
     @AccessLog(module = AdminModule.CMS, operation = "公告置顶")
     public MessageResult toTop(@RequestParam("id")long id){
@@ -71,7 +71,7 @@ public class AnnouncementController extends BaseController {
      * @param id
      * @return
      */
-    @RequiresPermissions("system:announcement:dwon")
+    //@RequiresPermissions("system:announcement:dwon")
     @PostMapping("down")
     @AccessLog(module = AdminModule.CMS, operation = "公告取消置顶")
     public MessageResult toDown(@RequestParam("id")long id){
@@ -81,7 +81,7 @@ public class AnnouncementController extends BaseController {
         return success();
     }
 
-    @RequiresPermissions("system:announcement:page-query")
+    //@RequiresPermissions("system:announcement:page-query")
     @GetMapping("page-query")
     public MessageResult page(
             PageModel pageModel,
@@ -102,14 +102,14 @@ public class AnnouncementController extends BaseController {
         return success(all);
     }
 
-    @RequiresPermissions("system:announcement:deletes")
+    //@RequiresPermissions("system:announcement:deletes")
     @PatchMapping("deletes")
     public MessageResult deleteOne(@RequestParam Long[] ids) {
         announcementService.deleteBatch(ids);
         return success();
     }
 
-    @RequiresPermissions("system:announcement:detail")
+    //@RequiresPermissions("system:announcement:detail")
     @GetMapping("{id}/detail")
     public MessageResult detail(
             @PathVariable Long id) {
@@ -119,7 +119,7 @@ public class AnnouncementController extends BaseController {
     }
 
 
-    @RequiresPermissions("system:announcement:update")
+    //@RequiresPermissions("system:announcement:update")
     @PutMapping("{id}/update")
     public MessageResult update(
             @PathVariable Long id,
@@ -137,7 +137,7 @@ public class AnnouncementController extends BaseController {
         return success();
     }
 
-    @RequiresPermissions("system:announcement:turn-off")
+    //@RequiresPermissions("system:announcement:turn-off")
     @PatchMapping("{id}/turn-off")
     public MessageResult turnOff(@PathVariable Long id) {
         Announcement announcement = announcementService.findById(id);
@@ -147,7 +147,7 @@ public class AnnouncementController extends BaseController {
         return success();
     }
 
-    @RequiresPermissions("system:announcement:turn-on")
+    //@RequiresPermissions("system:announcement:turn-on")
     @PatchMapping("{id}/turn-on")
     public MessageResult turnOn(@PathVariable("id") Long id) {
         Announcement announcement = announcementService.findById(id);

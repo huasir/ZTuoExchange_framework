@@ -68,7 +68,7 @@ public class ManuallyController extends BaseAdminController {
     @Autowired
     private MemberTransactionService memberTransactionService;
 
-    @RequiresPermissions("finance:manually")
+    //@RequiresPermissions("finance:manually")
     @PostMapping("upload")
     public MessageResult uploadXml(HttpServletRequest request, HttpServletResponse response,
                                    @SessionAttribute(SysConstant.SESSION_ADMIN) Admin admin,
@@ -148,7 +148,7 @@ public class ManuallyController extends BaseAdminController {
         return MessageResult.success();
     }
 
-    @RequiresPermissions("finance:manually")
+    //@RequiresPermissions("finance:manually")
     @PostMapping("list")
     public MessageResult airdropList(PageModel pageModel){
         pageModel.setSort();
@@ -158,7 +158,7 @@ public class ManuallyController extends BaseAdminController {
         return result;
     }
 
-    @RequiresPermissions("finance:manually")
+    //@RequiresPermissions("finance:manually")
     @PostMapping("pageQuery")
     public MessageResult pageQuery(
             PageModel pageModel,

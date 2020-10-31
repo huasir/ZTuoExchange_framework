@@ -34,7 +34,7 @@ public class MemberLevelController extends BaseAdminController {
     @Autowired
     private MemberLevelService memberLevelService;
 
-    @RequiresPermissions("member:member-level:all")
+    //@RequiresPermissions("member:member-level:all")
     @PostMapping("all")
     @AccessLog(module = AdminModule.MEMBER, operation = "所有会员等级MemberLevel")
     public MessageResult findAll() {
@@ -44,7 +44,7 @@ public class MemberLevelController extends BaseAdminController {
         return messageResult;
     }
 
-    @RequiresPermissions("member:member-level:update")
+    //@RequiresPermissions("member:member-level:update")
     @PostMapping("update")
     @AccessLog(module = AdminModule.MEMBER, operation = "更新会员等级MemberLevel")
     @Transactional(rollbackFor = Exception.class)

@@ -72,7 +72,7 @@ public class AdminAppealController extends BaseAdminController {
     private MemberTransactionService memberTransactionService;
 
 
-    @RequiresPermissions("otc:appeal:page-query")
+    //@RequiresPermissions("otc:appeal:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.OTC, operation = "分页查找后台申诉Appeal")
     public MessageResult pageQuery(
@@ -123,7 +123,7 @@ public class AdminAppealController extends BaseAdminController {
         return success("获取成功",page);
     }
 
-    @RequiresPermissions("otc:appeal:detail")
+    //@RequiresPermissions("otc:appeal:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.OTC, operation = "后台申诉Appeal详情")
     public MessageResult detail(
@@ -153,7 +153,7 @@ public class AdminAppealController extends BaseAdminController {
      * @return
      * @throws InformationExpiredException
      */
-    @RequiresPermissions("otc:appeal:cancel-order")
+    //@RequiresPermissions("otc:appeal:cancel-order")
     @PostMapping("cancel-order")
     @Transactional(rollbackFor = Exception.class)
     public MessageResult cancelOrder(long appealId, String orderSn, @RequestParam(value = "banned", defaultValue = "false") boolean banned) throws InformationExpiredException {
@@ -252,7 +252,7 @@ public class AdminAppealController extends BaseAdminController {
      * @param orderSn
      * @return
      */
-    @RequiresPermissions("otc:appeal:release-coin")
+    //@RequiresPermissions("otc:appeal:release-coin")
     @PostMapping("release-coin")
     @Transactional(rollbackFor = Exception.class)
     public MessageResult confirmRelease(long appealId, String orderSn, @RequestParam(value = "banned", defaultValue = "false") boolean banned) throws Exception {

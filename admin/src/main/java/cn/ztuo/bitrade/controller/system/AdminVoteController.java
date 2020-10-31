@@ -40,7 +40,7 @@ public class AdminVoteController extends BaseAdminController {
     @Autowired
     private LocaleMessageSourceService messageSource;
 
-    @RequiresPermissions("system:vote:merge")
+    //@RequiresPermissions("system:vote:merge")
     @PostMapping("merge")
     @AccessLog(module = AdminModule.SYSTEM, operation = "新增投票")
     @Transactional(rollbackFor = Exception.class)
@@ -78,7 +78,7 @@ public class AdminVoteController extends BaseAdminController {
     }
 
 
-    @RequiresPermissions("system:vote:detail")
+    //@RequiresPermissions("system:vote:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.SYSTEM, operation = "投票详情")
     public MessageResult detail(Long id) {
@@ -86,7 +86,7 @@ public class AdminVoteController extends BaseAdminController {
         return MessageResult.getSuccessInstance(messageSource.getMessage("SUCCESS"), vote);
     }
 
-    @RequiresPermissions("system:vote:page-query")
+    //@RequiresPermissions("system:vote:page-query")
     @PostMapping("page-query")
     public MessageResult pageQuery(PageModel pageModel) {
         Page<Vote> all = voteService.findAll(null, pageModel.getPageable());

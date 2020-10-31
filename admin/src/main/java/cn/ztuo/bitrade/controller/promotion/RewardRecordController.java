@@ -26,7 +26,7 @@ public class RewardRecordController extends BaseAdminController {
     private RewardRecordService rewardRecordService ;
 
     @PostMapping("page-query")
-    @RequiresPermissions("promotion:reward-record:page-query")
+    //@RequiresPermissions("promotion:reward-record:page-query")
     public MessageResult page(PageModel pageModel, RewardRecordScreen screen){
         Predicate predicate = screen.getPredicate();
         Page<RewardRecord> page = rewardRecordService.findAll(predicate,pageModel);

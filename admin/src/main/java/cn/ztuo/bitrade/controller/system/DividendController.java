@@ -60,7 +60,7 @@ public class DividendController extends BaseAdminController {
      * @return
      */
     @RequestMapping(value = "/fee/info", method = RequestMethod.POST)
-    @RequiresPermissions("system:dividend:fee-query")
+    //@RequiresPermissions("system:dividend:fee-query")
     @AccessLog(module = AdminModule.SYSTEM, operation = "查看手续费信息")
     public MessageResult statisticsFee(@RequestParam(value = "start") Date start,
                                        @RequestParam(value = "end") Date end) {
@@ -78,7 +78,7 @@ public class DividendController extends BaseAdminController {
      * @return
      */
     @RequestMapping(value = "/start", method = RequestMethod.POST)
-    @RequiresPermissions("system:dividend:start")
+    //@RequiresPermissions("system:dividend:start")
     @Transactional(rollbackFor = Exception.class)
     @AccessLog(module = AdminModule.SYSTEM, operation = "开始分红")
     public MessageResult start(@RequestParam(value = "start") Date start,
@@ -171,7 +171,7 @@ public class DividendController extends BaseAdminController {
                 });
     }
 
-    @RequiresPermissions("system:dividend:page-query")
+    //@RequiresPermissions("system:dividend:page-query")
     @PostMapping("page-query")
     public MessageResult pageQuery(
             PageModel pageModel,

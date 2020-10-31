@@ -40,7 +40,7 @@ public class MemberApplicationController extends BaseAdminController {
     @Autowired
     private LocaleMessageSourceService messageSource;
 
-    @RequiresPermissions("member:member-application:all")
+    //@RequiresPermissions("member:member-application:all")
     @PostMapping("all")
     @AccessLog(module = AdminModule.MEMBER, operation = "所有会员MemberApplication认证信息")
     public MessageResult all() {
@@ -50,7 +50,7 @@ public class MemberApplicationController extends BaseAdminController {
         return error(messageSource.getMessage("NO_DATA"));
     }
 
-    @RequiresPermissions("member:member-application:detail")
+    //@RequiresPermissions("member:member-application:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.MEMBER, operation = "会员MemberApplication认证信息详情")
     public MessageResult detail(@RequestParam("id") Long id) {
@@ -59,7 +59,7 @@ public class MemberApplicationController extends BaseAdminController {
         return success(memberApplication);
     }
 
-    @RequiresPermissions("member:member-application:page-query")
+    //@RequiresPermissions("member:member-application:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.MEMBER, operation = "分页查找会员MemberApplication认证信息")
     public MessageResult queryPage(PageModel pageModel, MemberApplicationScreen screen) {
@@ -93,7 +93,7 @@ public class MemberApplicationController extends BaseAdminController {
         return success(all);
     }
 
-    @RequiresPermissions("member:member-application:pass")
+    //@RequiresPermissions("member:member-application:pass")
     @PatchMapping("{id}/pass")
     @AccessLog(module = AdminModule.MEMBER, operation = "会员MemberApplication认证通过审核")
     public MessageResult pass(@PathVariable("id") Long id) {
@@ -109,7 +109,7 @@ public class MemberApplicationController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("member:member-application:no-pass")
+    //@RequiresPermissions("member:member-application:no-pass")
     @PatchMapping("{id}/no-pass")
     @AccessLog(module = AdminModule.MEMBER, operation = "会员MemberApplication认证不通过审核")
     public MessageResult noPass(

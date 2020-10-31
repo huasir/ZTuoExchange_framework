@@ -31,7 +31,7 @@ public class IntegrationRecordController extends BaseController {
     private IntegrationRecordService recordService ;
 
     @AccessLog(module = AdminModule.MEMBER, operation = "会员积分记录查询")
-    @RequiresPermissions("member:integration_query_page:all")
+    //@RequiresPermissions("member:integration_query_page:all")
     @RequestMapping(value = "query_page",method = RequestMethod.POST)
     public MessageResult findAllIntegrationPage(@RequestBody IntegrationRecordVO queryVo){
         Page<IntegrationRecord> page =  recordService.findRecord4Page(queryVo);

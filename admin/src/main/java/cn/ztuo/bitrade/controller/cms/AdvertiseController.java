@@ -52,7 +52,7 @@ public class AdvertiseController extends BaseAdminController {
     @Autowired
     private LocaleMessageSourceService msService;
 
-    @RequiresPermissions("cms:system-advertise:create")
+    //@RequiresPermissions("cms:system-advertise:create")
     @PostMapping("/create")
     @AccessLog(module = AdminModule.CMS, operation = "创建系统广告")
     public MessageResult findOne(@Valid SysAdvertise sysAdvertise, BindingResult bindingResult) {
@@ -68,7 +68,7 @@ public class AdvertiseController extends BaseAdminController {
         return success(one);
     }
 
-    @RequiresPermissions("cms:system-advertise:all")
+    //@RequiresPermissions("cms:system-advertise:all")
     @PostMapping("/all")
     @AccessLog(module = AdminModule.CMS, operation = "所有系统广告")
     public MessageResult all() {
@@ -78,7 +78,7 @@ public class AdvertiseController extends BaseAdminController {
         return error("data null");
     }
 
-    @RequiresPermissions("cms:system-advertise:detail")
+    //@RequiresPermissions("cms:system-advertise:detail")
     @PostMapping("/detail")
     @AccessLog(module = AdminModule.CMS, operation = "系统广告详情")
     public MessageResult findOne(@RequestParam(value = "serialNumber") String serialNumber) {
@@ -87,7 +87,7 @@ public class AdvertiseController extends BaseAdminController {
         return success(sysAdvertise);
     }
 
-    @RequiresPermissions("cms:system-advertise:update")
+    //@RequiresPermissions("cms:system-advertise:update")
     @PostMapping("/update")
     @AccessLog(module = AdminModule.CMS, operation = "更新系统广告")
     public MessageResult update(@Valid SysAdvertise sysAdvertise, BindingResult bindingResult) {
@@ -101,7 +101,7 @@ public class AdvertiseController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("cms:system-advertise:deletes")
+    //@RequiresPermissions("cms:system-advertise:deletes")
     @PostMapping("/deletes")
     @AccessLog(module = AdminModule.CMS, operation = "批量删除系统广告")
     public MessageResult delete(@RequestParam(value = "ids") String[] ids) {
@@ -110,7 +110,7 @@ public class AdvertiseController extends BaseAdminController {
     }
 
 
-    @RequiresPermissions("cms:system-advertise:page-query")
+    //@RequiresPermissions("cms:system-advertise:page-query")
     @PostMapping("/page-query")
     @AccessLog(module = AdminModule.CMS, operation = "分页查询系统广告")
     public MessageResult pageQuery(PageModel pageModel, SysAdvertiseScreen screen) {
@@ -141,7 +141,7 @@ public class AdvertiseController extends BaseAdminController {
         return PredicateUtils.getPredicate(booleanExpressions);
     }
 
-    @RequiresPermissions("cms:system-advertise:top")
+    //@RequiresPermissions("cms:system-advertise:top")
     @PostMapping("top")
     @AccessLog(module = AdminModule.CMS, operation = "广告置顶")
     public MessageResult toTop(@RequestParam("serialNum") String serialNum) {
@@ -153,7 +153,7 @@ public class AdvertiseController extends BaseAdminController {
     }
 
 
-    @RequiresPermissions("cms:system-advertise:out-excel")
+    //@RequiresPermissions("cms:system-advertise:out-excel")
     @GetMapping("/out-excel")
     @AccessLog(module = AdminModule.CMS, operation = "导出系统广告Excel")
     public MessageResult outExcel(

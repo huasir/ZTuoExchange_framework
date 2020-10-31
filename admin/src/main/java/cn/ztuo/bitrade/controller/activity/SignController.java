@@ -43,7 +43,7 @@ public class SignController extends BaseAdminController {
     private CoinService coinService;
 
     //创建
-    @RequiresPermissions("activity:sign:post")
+    //@RequiresPermissions("activity:sign:post")
     @PostMapping
     public MessageResult create(@Valid SignCreate model, BindingResult bindingResult) {
         MessageResult result = BindingResultUtil.validate(bindingResult);
@@ -53,7 +53,7 @@ public class SignController extends BaseAdminController {
     }
 
     //更新
-    @RequiresPermissions("activity:sign:put")
+    //@RequiresPermissions("activity:sign:put")
     @PutMapping("{id}")
     public MessageResult update(@Valid SignUpdate model, BindingResult bindingResult, @PathVariable("id") Long id) {
         MessageResult result = BindingResultUtil.validate(bindingResult);
@@ -69,7 +69,7 @@ public class SignController extends BaseAdminController {
     }
 
     //分页
-    @RequiresPermissions("activity:sign:page-query")
+    //@RequiresPermissions("activity:sign:page-query")
     @GetMapping("page-query")
     public MessageResult pageQuery(SignScreen screen, PageModel pageModel) {
         Page<Sign> source = service.findAllScreen(screen, pageModel);
@@ -78,7 +78,7 @@ public class SignController extends BaseAdminController {
     }
 
     //详情
-    @RequiresPermissions("activity:sign:id:get")
+    //@RequiresPermissions("activity:sign:id:get")
     @GetMapping("{id}")
     public MessageResult detail(@PathVariable("id") Long id) {
         //校验id
@@ -89,7 +89,7 @@ public class SignController extends BaseAdminController {
     }
 
     // 提前关闭
-    @RequiresPermissions("activity:sign:id:early-closing")
+    //@RequiresPermissions("activity:sign:id:early-closing")
     @PatchMapping("{id}/early-closing")
     public MessageResult earlyClosing(@PathVariable("id") Long id) {
         //校验id

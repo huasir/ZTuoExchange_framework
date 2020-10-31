@@ -56,7 +56,7 @@ public class MemberTransactionController extends BaseAdminController {
     @Autowired
     private MemberTransactionService memberTransactionService;
 
-    @RequiresPermissions("finance:member-transaction:all")
+    //@RequiresPermissions("finance:member-transaction:all")
     @PostMapping("/all")
     @AccessLog(module = AdminModule.FINANCE, operation = "所有交易记录MemberTransaction")
     public MessageResult all() {
@@ -66,7 +66,7 @@ public class MemberTransactionController extends BaseAdminController {
         return error(messageSource.getMessage("NO_DATA"));
     }
 
-    @RequiresPermissions("finance:member-transaction:detail")
+    //@RequiresPermissions("finance:member-transaction:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.FINANCE, operation = "交易记录MemberTransaction 详情")
     public MessageResult detail(@RequestParam(value = "id") Long id) {
@@ -75,8 +75,8 @@ public class MemberTransactionController extends BaseAdminController {
         return success(memberTransaction);
     }
 
-    @RequiresPermissions(value = {"finance:member-transaction:page-query", "finance:member-transaction:page-query:recharge",
-            "finance:member-transaction:page-query:check", "finance:member-transaction:page-query:fee"}, logical = Logical.OR)
+    //@RequiresPermissions(value = {"finance:member-transaction:page-query", "finance:member-transaction:page-query:recharge",
+//            "finance:member-transaction:page-query:check", "finance:member-transaction:page-query:fee"}, logical = Logical.OR)
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.FINANCE, operation = "分页查找交易记录MemberTransaction")
     public MessageResult pageQuery(
@@ -117,7 +117,7 @@ public class MemberTransactionController extends BaseAdminController {
         return success(results);
     }
 
-    @RequiresPermissions("finance:member-transaction:out-excel")
+    //@RequiresPermissions("finance:member-transaction:out-excel")
     @GetMapping("out-excel")
     @AccessLog(module = AdminModule.FINANCE, operation = "导出交易记录MemberTransaction Excel")
     public MessageResult outExcel(

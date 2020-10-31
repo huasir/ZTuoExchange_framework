@@ -46,7 +46,7 @@ public class ieoController extends BaseController {
      * @param ieoEmptionVO
      * @return
      */
-    @RequiresPermissions("ieo:page-query")
+    //@RequiresPermissions("ieo:page-query")
     @RequestMapping(value = "page-query",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.IEO, operation = "分页查找IEO")
     public MessageResult getByPage(@RequestBody IeoEmptionVO ieoEmptionVO){
@@ -68,7 +68,7 @@ public class ieoController extends BaseController {
      * @param ieoEmption
      * @return
      */
-    @RequiresPermissions("ieo:save")
+    //@RequiresPermissions("ieo:save")
     @RequestMapping(value = "save",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.IEO, operation = "保存/修改IEO")
     public MessageResult saveIEO(@SessionAttribute(SysConstant.SESSION_ADMIN) Admin admin,@RequestBody IeoEmption ieoEmption){
@@ -95,7 +95,7 @@ public class ieoController extends BaseController {
      * 根据ID删除IEO
      * @return
      */
-    @RequiresPermissions("ieo:del")
+    //@RequiresPermissions("ieo:del")
     @RequestMapping(value = "del/{id}",method = RequestMethod.GET)
     @AccessLog(module = AdminModule.IEO, operation = "删除IEO")
     public MessageResult delIEO(@PathVariable("id")Long id){
@@ -119,7 +119,7 @@ public class ieoController extends BaseController {
      * @param emptionRecrodVO
      * @return
      */
-    @RequiresPermissions("ieo:record:page-query")
+    //@RequiresPermissions("ieo:record:page-query")
     @RequestMapping(value = "record/page-query",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.IEO, operation = "分页查找IEO认购记录")
     public MessageResult getRecordByPage(@RequestBody EmptionRecrodVO emptionRecrodVO){

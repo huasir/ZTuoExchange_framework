@@ -41,7 +41,7 @@ public class HelpController extends BaseAdminController {
     @Autowired
     private LocaleMessageSourceService msService;
 
-    @RequiresPermissions("cms:system-help:create")
+    //@RequiresPermissions("cms:system-help:create")
     @PostMapping("/create")
     @AccessLog(module = AdminModule.CMS, operation = "创建系统帮助")
     public MessageResult create(@Valid SysHelp sysHelp, BindingResult bindingResult) {
@@ -53,7 +53,7 @@ public class HelpController extends BaseAdminController {
         return success(sysHelp);
     }
 
-    @RequiresPermissions("cms:system-help:all")
+    //@RequiresPermissions("cms:system-help:all")
     @PostMapping("/all")
     @AccessLog(module = AdminModule.CMS, operation = "查找所有系统帮助")
     public MessageResult all() {
@@ -63,7 +63,7 @@ public class HelpController extends BaseAdminController {
         return error("data null");
     }
 
-    @RequiresPermissions("cms:system-help:top")
+    //@RequiresPermissions("cms:system-help:top")
     @PostMapping("top")
     @AccessLog(module = AdminModule.CMS, operation = "系统帮助置顶")
     public MessageResult toTop(@RequestParam("id")long id){
@@ -80,7 +80,7 @@ public class HelpController extends BaseAdminController {
      * @param id
      * @return
      */
-    @RequiresPermissions("cms:system-help:down")
+    //@RequiresPermissions("cms:system-help:down")
     @PostMapping("down")
     @AccessLog(module = AdminModule.CMS, operation = "系统帮助取消置顶")
     public MessageResult toDown(@RequestParam("id")long id){
@@ -91,7 +91,7 @@ public class HelpController extends BaseAdminController {
     }
 
 
-    @RequiresPermissions("cms:system-help:detail")
+    //@RequiresPermissions("cms:system-help:detail")
     @PostMapping("/detail")
     @AccessLog(module = AdminModule.CMS, operation = "系统帮助详情")
     public MessageResult detail(@RequestParam(value = "id") Long id) {
@@ -100,7 +100,7 @@ public class HelpController extends BaseAdminController {
         return success(sysHelp);
     }
 
-    @RequiresPermissions("cms:system-help:update")
+    //@RequiresPermissions("cms:system-help:update")
     @PostMapping("/update")
     @AccessLog(module = AdminModule.CMS, operation = "更新系统帮助")
     public MessageResult update(@Valid SysHelp sysHelp, BindingResult bindingResult) {
@@ -114,7 +114,7 @@ public class HelpController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("cms:system-help:deletes")
+    //@RequiresPermissions("cms:system-help:deletes")
     @PostMapping("/deletes")
     @AccessLog(module = AdminModule.CMS, operation = "删除系统帮助")
     public MessageResult deleteOne(@RequestParam("ids") Long[] ids) {
@@ -122,7 +122,7 @@ public class HelpController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("cms:system-help:page-query")
+    //@RequiresPermissions("cms:system-help:page-query")
     @PostMapping("/page-query")
     @AccessLog(module = AdminModule.CMS, operation = "分页查询系统帮助")
     public MessageResult pageQuery(PageModel pageModel) {
@@ -136,7 +136,7 @@ public class HelpController extends BaseAdminController {
         return success(all);
     }
 
-    @RequiresPermissions("cms:system-help:out-excel")
+    //@RequiresPermissions("cms:system-help:out-excel")
     @GetMapping("/out-excel")
     @AccessLog(module = AdminModule.CMS, operation = "导出系统帮助Excel")
     public MessageResult outExcel(HttpServletRequest request, HttpServletResponse response) throws Exception {

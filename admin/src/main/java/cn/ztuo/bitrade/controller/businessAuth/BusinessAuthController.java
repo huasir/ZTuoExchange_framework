@@ -39,7 +39,7 @@ public class BusinessAuthController extends BaseAdminController {
     @Autowired
     private BusinessAuthApplyService businessAuthApplyService;
 
-    @RequiresPermissions("business:auth:deposit:page")
+    //@RequiresPermissions("business:auth:deposit:page")
     @GetMapping("page")
     public MessageResult getAll(PageModel pageModel, CommonStatus status) {
         ArrayList<BooleanExpression> booleanExpressions = new ArrayList<>();
@@ -54,7 +54,7 @@ public class BusinessAuthController extends BaseAdminController {
         return result;
     }
 
-    @RequiresPermissions("business:auth:deposit:create")
+    //@RequiresPermissions("business:auth:deposit:create")
     @PostMapping("create")
     public MessageResult create(@SessionAttribute(SysConstant.SESSION_ADMIN) Admin admin,
                                 @RequestParam("amount") Double amount,
@@ -73,14 +73,14 @@ public class BusinessAuthController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("business-auth:apply:detail")
+    //@RequiresPermissions("business-auth:apply:detail")
     @PostMapping("apply/detail")
     public MessageResult detail(@RequestParam("id") Long id) {
         MessageResult result = businessAuthApplyService.detail(id);
         return result;
     }
 
-    @RequiresPermissions("business:auth:deposit:update")
+    //@RequiresPermissions("business:auth:deposit:update")
     @PatchMapping("update")
     public MessageResult update(
             @RequestParam("id") Long id,
@@ -113,7 +113,7 @@ public class BusinessAuthController extends BaseAdminController {
     }
 
     @PostMapping("apply/page-query")
-    @RequiresPermissions("business-auth:apply:page-query")
+    //@RequiresPermissions("business-auth:apply:page-query")
     public MessageResult page(
             PageModel pageModel,
             @RequestParam(value = "status", required = false) CertifiedBusinessStatus status,

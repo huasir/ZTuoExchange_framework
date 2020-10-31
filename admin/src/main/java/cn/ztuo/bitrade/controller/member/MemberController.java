@@ -65,7 +65,7 @@ public class MemberController extends BaseAdminController {
     @Autowired
     private OtcWalletService otcWalletService;
 
-    @RequiresPermissions("member:all")
+    //@RequiresPermissions("member:all")
     @PostMapping("all")
     @AccessLog(module = AdminModule.MEMBER, operation = "所有会员Member")
     public MessageResult all() {
@@ -75,7 +75,7 @@ public class MemberController extends BaseAdminController {
         return error(messageSource.getMessage("REQUEST_FAILED"));
     }
 
-    @RequiresPermissions("member:detail")
+    //@RequiresPermissions("member:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.MEMBER, operation = "会员Member详情")
     public MessageResult detail(@RequestParam("id") Long id) {
@@ -88,7 +88,7 @@ public class MemberController extends BaseAdminController {
         return success(memberDTO);
     }
 
-    @RequiresPermissions("member:delete")
+    //@RequiresPermissions("member:delete")
     @PostMapping("delete")
     @AccessLog(module = AdminModule.MEMBER, operation = "删除会员Member")
     public MessageResult delete(@RequestParam(value = "id") Long id) {
@@ -99,7 +99,7 @@ public class MemberController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("member:update")
+    //@RequiresPermissions("member:update")
     @PostMapping(value = "update")
     @AccessLog(module = AdminModule.MEMBER, operation = "更新会员Member")
     public MessageResult update(Member member) {
@@ -134,7 +134,7 @@ public class MemberController extends BaseAdminController {
      * @param detail
      * @return
      */
-    @RequiresPermissions("member:audit-business")
+    //@RequiresPermissions("member:audit-business")
     @PatchMapping("{id}/audit-business")
     @AccessLog(module = AdminModule.MEMBER, operation = "会员Member认证商家")
     @Transactional(rollbackFor = Exception.class)
@@ -207,7 +207,7 @@ public class MemberController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("member:page-query")
+    //@RequiresPermissions("member:page-query")
     @PostMapping("page-query")
     @ResponseBody
     @AccessLog(module = AdminModule.MEMBER, operation = "分页查找会员Member")
@@ -219,7 +219,7 @@ public class MemberController extends BaseAdminController {
         return success(all);
     }
 
-   /* @RequiresPermissions("member:audit-business")
+   /* //@RequiresPermissions("member:audit-business")
     @PatchMapping("{id}/cancel-business")
     @AccessLog(module = AdminModule.MEMBER, operation = "会员Member取消认证商家")
     @Transactional(rollbackFor = Exception.class)
@@ -267,7 +267,7 @@ public class MemberController extends BaseAdminController {
         return success();
     }*/
 
-    @RequiresPermissions("member:audit-business")
+    //@RequiresPermissions("member:audit-business")
     @GetMapping("{id}/business-auth-detail")
     @AccessLog(module = AdminModule.MEMBER, operation = "查询会员Member申请资料")
     @Transactional(rollbackFor = Exception.class)
@@ -312,7 +312,7 @@ public class MemberController extends BaseAdminController {
         return PredicateUtils.getPredicate(booleanExpressions);
     }
 
-    @RequiresPermissions("member:out-excel")
+    //@RequiresPermissions("member:out-excel")
     @GetMapping("out-excel")
     @AccessLog(module = AdminModule.MEMBER, operation = "导出会员Member Excel")
     public void outExcel(
@@ -337,7 +337,7 @@ public class MemberController extends BaseAdminController {
     }
 
 
-    @RequiresPermissions("member:alter-publish-advertisement-status")
+    //@RequiresPermissions("member:alter-publish-advertisement-status")
     @PostMapping("alter-publish-advertisement-status")
     @AccessLog(module = AdminModule.SYSTEM, operation = "禁用/解禁发布广告")
     public MessageResult publishAdvertise(@RequestParam("memberId") Long memberId,
@@ -351,7 +351,7 @@ public class MemberController extends BaseAdminController {
         return success(status == BooleanEnum.IS_FALSE ? "禁止发布广告成功" : "解除禁止成功");
     }
 
-    @RequiresPermissions("member:alter-status")
+    //@RequiresPermissions("member:alter-status")
     @PostMapping("alter-status")
     @AccessLog(module = AdminModule.SYSTEM, operation = "禁用/解禁会员账号")
     public MessageResult ban(@RequestParam("status") CommonStatus status,
@@ -362,7 +362,7 @@ public class MemberController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("member:alter-transaction-status")
+    //@RequiresPermissions("member:alter-transaction-status")
     @PostMapping("alter-transaction-status")
     @AccessLog(module = AdminModule.SYSTEM, operation = "禁用/解禁会员账号")
     public MessageResult alterTransactionStatus(
@@ -374,7 +374,7 @@ public class MemberController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("member:alter-status")
+    //@RequiresPermissions("member:alter-status")
     @PostMapping("unlock-login")
     @AccessLog(module = AdminModule.SYSTEM, operation = "解锁会员登录状态")
     public MessageResult unLockLogin(@RequestParam("memberId") Long memberId) {

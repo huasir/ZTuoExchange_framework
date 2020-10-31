@@ -28,7 +28,7 @@ public class PermissionController extends BaseController {
     @Autowired
     private SysPermissionService sysPermissionService;
 
-    @RequiresPermissions("system:permission:merge")
+    //@RequiresPermissions("system:permission:merge")
     @PostMapping("/merge")
     @AccessLog(module = AdminModule.SYSTEM, operation = "创建/修改权限")
     public MessageResult merge(@Valid SysPermission permission) {
@@ -53,7 +53,7 @@ public class PermissionController extends BaseController {
     }
 
 
-    @RequiresPermissions("system:permission:page-query")
+    //@RequiresPermissions("system:permission:page-query")
     @PostMapping("/page-query")
     @AccessLog(module = AdminModule.SYSTEM, operation = "分页查询权限")
     public MessageResult pageQuery(PageModel pageModel,
@@ -69,7 +69,7 @@ public class PermissionController extends BaseController {
         return success(all);
     }
 
-    @RequiresPermissions("system:permission:detail")
+    //@RequiresPermissions("system:permission:detail")
     @PostMapping("/detail")
     @AccessLog(module = AdminModule.SYSTEM, operation = "权限详情")
     public MessageResult detail(@RequestParam(value = "id") Long id) {
@@ -78,7 +78,7 @@ public class PermissionController extends BaseController {
         return MessageResult.getSuccessInstance("查询权限成功", sysPermission);
     }
 
-    @RequiresPermissions("system:permission:deletes")
+    //@RequiresPermissions("system:permission:deletes")
     @PostMapping("/deletes")
     @AccessLog(module = AdminModule.SYSTEM, operation = "批量删除权限")
     public MessageResult deletes(@RequestParam(value = "ids") Long[] ids) {

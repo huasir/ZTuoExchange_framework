@@ -50,7 +50,7 @@ public class AdminGiftController extends BaseController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("gift:page-query")
+    //@RequiresPermissions("gift:page-query")
     @RequestMapping(value = "page-query",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.GIFT, operation = "分页查询糖果设置")
     public MessageResult getByPage(@RequestBody GiftConfigVO giftConfigVO) throws Exception{
@@ -65,7 +65,7 @@ public class AdminGiftController extends BaseController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("gift:save")
+    //@RequiresPermissions("gift:save")
     @RequestMapping(value = "save",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.GIFT, operation = "新增发放糖果")
     public MessageResult saveGiftConfig(@RequestBody GiftConfig giftConfig) throws Exception{
@@ -82,7 +82,7 @@ public class AdminGiftController extends BaseController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("gift:record:page-query")
+    //@RequiresPermissions("gift:record:page-query")
     @RequestMapping(value = "record/page-query",method = RequestMethod.POST)
     @AccessLog(module = AdminModule.GIFT, operation = "分页查询糖果发放记录")
     public MessageResult getByPage(@RequestBody GiftRecordVO giftRecordVO) throws Exception{

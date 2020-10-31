@@ -38,7 +38,7 @@ public class ExchangeInitPlateController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("exchange:init-plate:query")
+    //@RequiresPermissions("exchange:init-plate:query")
     @PostMapping("query")
     public MessageResult queryExchangeInitPlate(@RequestParam int pageNum,
                                                   @RequestParam int pageSize,
@@ -71,7 +71,7 @@ public class ExchangeInitPlateController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("exchange:init-plate:detail")
+    //@RequiresPermissions("exchange:init-plate:detail")
     @GetMapping("detail/{id}")
     public MessageResult queryDetailExchangeInitPlate(@PathVariable("id")long id)throws Exception{
         MessageResult mr = new MessageResult();
@@ -94,7 +94,7 @@ public class ExchangeInitPlateController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("exchange:init-plate:delete")
+    //@RequiresPermissions("exchange:init-plate:delete")
     @GetMapping("delete/{id}")
     public MessageResult deleteExchangeInitPlate(@PathVariable("id")long id)throws Exception{
         MessageResult mr = new MessageResult();
@@ -125,7 +125,7 @@ public class ExchangeInitPlateController {
      * @return
      * @throws Exception
      */
-    @RequiresPermissions("exchange:init-plate:update")
+    //@RequiresPermissions("exchange:init-plate:update")
     @PostMapping("update")
     public MessageResult updateExchangeInitPlate(InitPlate initPlate)throws Exception{
         MessageResult mr = new MessageResult();
@@ -165,7 +165,7 @@ public class ExchangeInitPlateController {
      * @throws Exception
      */
 
-    @RequiresPermissions("exchange:init-plate:add")
+    //@RequiresPermissions("exchange:init-plate:add")
     @PostMapping("add")
     public MessageResult addExchangeInitPlate(InitPlate initPlate)throws Exception{
         MessageResult mr = new MessageResult();

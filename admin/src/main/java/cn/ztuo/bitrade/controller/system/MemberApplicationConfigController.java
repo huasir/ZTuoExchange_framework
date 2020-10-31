@@ -22,7 +22,7 @@ public class MemberApplicationConfigController {
     @Autowired
     private MemberApplicationConfigService memberApplicationConfigService ;
 
-    @RequiresPermissions("system:member-application-config:merge")
+    //@RequiresPermissions("system:member-application-config:merge")
     @PostMapping("merge")
     @AccessLog(module = AdminModule.SYSTEM, operation = "实名认证配置修改")
     public MessageResult merge(@Valid MemberApplicationConfig memberApplicationConfig, BindingResult bindingResult){
@@ -33,7 +33,7 @@ public class MemberApplicationConfigController {
         return MessageResult.getSuccessInstance("保存成功",memberApplicationConfig);
     }
 
-    @RequiresPermissions("system:member-application-config:detail")
+    //@RequiresPermissions("system:member-application-config:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.SYSTEM, operation = "实名认证配置详情")
     public MessageResult query(){

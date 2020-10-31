@@ -274,7 +274,7 @@ public class EmployeeController extends BaseAdminController {
      */
 
 
-    @RequiresPermissions("system:employee:merge")
+    //@RequiresPermissions("system:employee:merge")
     @RequestMapping(value = "/merge")
     @ResponseBody
     @AccessLog(module = AdminModule.SYSTEM, operation = "创建或更改后台用户")
@@ -317,7 +317,7 @@ public class EmployeeController extends BaseAdminController {
     }
 
     @ResponseBody
-    @RequiresPermissions("system:employee:page-query")
+    //@RequiresPermissions("system:employee:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.SYSTEM, operation = "分页查找后台用户admin")
     public MessageResult findAllAdminUser(
@@ -338,7 +338,7 @@ public class EmployeeController extends BaseAdminController {
         return success(all);
     }
 
-    @RequiresPermissions("system:employee:update-password")
+    //@RequiresPermissions("system:employee:update-password")
     @PostMapping("update-password")
     @ResponseBody
     public MessageResult updatePassword(Long id, String lastPassword, String newPassword) {
@@ -373,7 +373,7 @@ public class EmployeeController extends BaseAdminController {
      */
 
 
-    @RequiresPermissions("system:employee:detail")
+    //@RequiresPermissions("system:employee:detail")
     @RequestMapping(value = "/detail")
     @ResponseBody
     @AccessLog(module = AdminModule.SYSTEM, operation = "后台用户Admin详情")
@@ -393,7 +393,7 @@ public class EmployeeController extends BaseAdminController {
      */
 
 
-    @RequiresPermissions("system:employee:deletes")
+    //@RequiresPermissions("system:employee:deletes")
     @RequestMapping(value = "/deletes")
     @ResponseBody
     @AccessLog(module = AdminModule.SYSTEM, operation = "后台用户Admin详情")

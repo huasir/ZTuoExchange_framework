@@ -44,7 +44,7 @@ public class AdminOtcCoinController extends BaseAdminController {
     @Autowired
     private CoinService coinService ;
 
-    @RequiresPermissions("otc:otc-coin:create")
+    //@RequiresPermissions("otc:otc-coin:create")
     @PostMapping("create")
     @AccessLog(module = AdminModule.OTC, operation = "创建otc币种otcCoin")
     public MessageResult create(@Valid OtcCoin otcCoin, BindingResult bindingResult) {
@@ -63,7 +63,7 @@ public class AdminOtcCoinController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("otc:otc-coin:all")
+    //@RequiresPermissions("otc:otc-coin:all")
     @PostMapping("all")
     @AccessLog(module = AdminModule.OTC, operation = "所有otc币种otcCoin")
     public MessageResult all() {
@@ -73,7 +73,7 @@ public class AdminOtcCoinController extends BaseAdminController {
         return error(messageSource.getMessage("NO_DATA"));
     }
 
-    @RequiresPermissions("otc:otc-coin:detail")
+    //@RequiresPermissions("otc:otc-coin:detail")
     @PostMapping("detail")
     @AccessLog(module = AdminModule.OTC, operation = "otc币种otcCoin详情")
     public MessageResult detail(@RequestParam("id") Long id) {
@@ -82,7 +82,7 @@ public class AdminOtcCoinController extends BaseAdminController {
         return success(one);
     }
 
-    @RequiresPermissions("otc:otc-coin:update")
+    //@RequiresPermissions("otc:otc-coin:update")
     @PostMapping("update")
     @AccessLog(module = AdminModule.OTC, operation = "更新otc币种otcCoin")
     public MessageResult update(@Valid OtcCoin otcCoin, BindingResult bindingResult) {
@@ -96,7 +96,7 @@ public class AdminOtcCoinController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("otc:otc-coin:deletes")
+    //@RequiresPermissions("otc:otc-coin:deletes")
     @PostMapping("deletes")
     @AccessLog(module = AdminModule.OTC, operation = "otc币种otcCoin 删除")
     public MessageResult deletes(
@@ -105,7 +105,7 @@ public class AdminOtcCoinController extends BaseAdminController {
         return success(messageSource.getMessage("SUCCESS"));
     }
 
-    @RequiresPermissions("otc:otc-coin:alter-jy-rate")
+    //@RequiresPermissions("otc:otc-coin:alter-jy-rate")
     @PostMapping("alter-jy-rate")
     @AccessLog(module = AdminModule.OTC, operation = "修改otc币种otcCoin交易率")
     public MessageResult memberStatistics(
@@ -118,7 +118,7 @@ public class AdminOtcCoinController extends BaseAdminController {
         return success();
     }
 
-    @RequiresPermissions("otc:otc-coin:page-query")
+    //@RequiresPermissions("otc:otc-coin:page-query")
     @PostMapping("page-query")
     @AccessLog(module = AdminModule.OTC, operation = "分页查找otc币种otcCoin")
     public MessageResult pageQuery(PageModel pageModel) {
@@ -126,7 +126,7 @@ public class AdminOtcCoinController extends BaseAdminController {
         return success(pageResult);
     }
 
-    @RequiresPermissions("otc:otc-coin:out-excel")
+    //@RequiresPermissions("otc:otc-coin:out-excel")
     @GetMapping("out-excel")
     @AccessLog(module = AdminModule.OTC, operation = "导出otc币种otcCoin Excel")
     public MessageResult outExcel(HttpServletRequest request, HttpServletResponse response) throws Exception {
